@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+  const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 //A schema represents what a collection looks like - specifying each attribute in the schema.
