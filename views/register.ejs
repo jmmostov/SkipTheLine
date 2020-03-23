@@ -9,7 +9,7 @@
     Register as a new user here
 </h1>
 
-<form action="/users/register" method="POST" enctype="multipart/form-data">
+<form action="/users/register" method="POST" enctype="application/x-www-form-urlencoded">
     <div class="container">
         <p>Please fill in this form to create an account.</p>
         <hr>
@@ -20,6 +20,10 @@
         <div class="control-group">
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" id="password" name="password">
+        </div>
+        <div class="control-group">
+            <label for="adminPsw"><b>Admin code</b></label>
+            <input type="text" placeholder="Admin code" id="adminCode" name="adminCode">
         </div>
         <hr>
         <div class="control-group">
@@ -35,9 +39,3 @@
 </body>
 
 </html>
-
-
-Chat afsluttet
-Skriv en besked, @navn ...
-
-

@@ -7,16 +7,13 @@ const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const path = require('path')
 
-let indexRouter = require('./routes/index');
-
 mongoose.connect('mongodb://localhost/skiptheline', {useNewUrlParser: true, useUnifiedTopology: true});
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-
-app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.json())
 
 app.use(express.static('public'))
 app.use(session({
@@ -26,6 +23,8 @@ app.use(session({
     store: new mongoStore({mongooseConnection: mongoose.connection}),
     cookie: {maxAge: 180 * 60 * 1000}
 }))
+
+let indexRouter = require('./routes/index');
 
 app.use('/', indexRouter);
 
