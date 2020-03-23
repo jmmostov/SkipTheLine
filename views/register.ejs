@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<%- include('layouts/header.ejs');-%>
+
+<body>
+<%- include('layouts/navbar'); -%>
+<h1>
+    Register as a new user here
+</h1>
+
+<form action="/users/register" method="POST" enctype="multipart/form-data">
+    <div class="container">
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+        <div class="control-group">
+            <label for="Username"><b>Username</b></label>
+            <input type="text" placeholder="Username" id="username" name="username">
+        </div>
+        <div class="control-group">
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" id="password" name="password">
+        </div>
+        <hr>
+        <div class="control-group">
+            <button type="submit" class="registerbtn">Register</button>
+        </div>
+    </div>
+
+    <div class="container signin">
+        <p>Already have an account? <a href="/login">Sign in</a>.</p>
+    </div>
+</form>
+
+</body>
+
+</html>
+
+
+Chat afsluttet
+Skriv en besked, @navn ...
+
+
