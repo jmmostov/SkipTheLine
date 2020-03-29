@@ -1,9 +1,19 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const Product = require('../models/Product');
 
-/* GET home page. */
+
+/* GET all products */
 router.get('/', function(req, res, next) {
-    res.render('index');
+    let products = Product.find();
+    res.render('index', {
+        productSchema: products
+    });
 });
+
+
+
+// POST new products
+router.post('/product/new', )
 
 module.exports = router;
