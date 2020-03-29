@@ -23,7 +23,6 @@ router.post('/', (req, res, next) => {
     });
     order
         .save()
-        .exec()
         .then(result => {
             console.log(result);
             res.status(201).json(result);
@@ -34,4 +33,4 @@ router.post('/', (req, res, next) => {
                 error: err
             });
         });
-})
+});
