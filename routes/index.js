@@ -8,7 +8,6 @@ const loginController = require('../controller/loginController')
 const loginUserController = require('../controller/loginUser')
 const adminLoginController = require('../controller/getRegisterLinestander')
 const storeLinestanderController = require('../controller/storeLinestander')
-//const getDataAdminController = require('../controller/getDataForAdmin')
 const updateDataAdminController = require('../controller/updateDataForAdmin')
 const logoutController = require('../controller/logoutController')
 
