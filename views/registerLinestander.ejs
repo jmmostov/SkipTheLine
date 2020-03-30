@@ -35,17 +35,13 @@
 
 <section class="get">
     <h3> GET data</h3>
-    <a href="/get-data"> Load data</a>
-
     <div>
         <% for(var i = 0; i < users.length; i++) { %>
-       <article class="item">
+       <article class="data">
+           <hr>
+           <div> <b>Username:</b> <%= users[i].username %> </div>
            <br>
-           <div> Username: <%= users[i].username %> </div>
-           <br>
-           <div> Password: <%= users[i].password %> </div>
-           <br>
-           <div> ID: <%= users[i]._id %> </div>
+           <div> <b>ID:</b>  <%= users[i]._id %></div>
        </article>
         <% } %>
     </div>
@@ -68,6 +64,8 @@
         <button type="submit"> Update</button>
     </form>
 </section>
+
+
 
 <%- include('layouts/scripts');-%>
 </body>
