@@ -15,13 +15,6 @@ mongoose.connect('mongodb://localhost/skiptheline', {useNewUrlParser: true, useU
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-//Opretter en global variabel som kan tilgås fra alle ejs filer, fordi navbar er i dem alle.
-global.loggedIn = null;
-app.use("*",(req, res, next)=>{
-    loggedIn = req.session.userId;
-    next()
-});
-
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 
@@ -36,7 +29,12 @@ app.use(session({
     cookie: {maxAge: 180 * 60 * 1000}
 }))
 
-
+//Opretter en global variabel som kan tilgås fra alle ejs filer, fordi navbar er i dem alle.
+global.loggedIn = null;
+app.use("*",(req, res, next)=>{
+    loggedIn = req.session.userId;
+    next()
+});
 
 app.listen(3000,()=>{
     console.log("App listening on port 3000")

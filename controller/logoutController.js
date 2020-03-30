@@ -1,3 +1,5 @@
 module.exports = (req,res) => {
-        res.render('logout')
+    req.session.destroy(()=>{
+        res.redirect('/')
+    })
 }
