@@ -10,6 +10,7 @@ module.exports = (req,res)=>{
             if (user.userType == "admin") {
                 req.session.adminCheck = user.userType;
             }
+            req.session.userId = user._id
             res.redirect('/registerLinestander')
         }
         else if(user){

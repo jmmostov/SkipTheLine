@@ -62,6 +62,3 @@ router.get('/lineItem/:id', lineItemSTORE);
 router.get('/lineItems',lineItemGET);
 
 module.exports = router;
-
-//Router to logout page
-router.get('/logout', logoutController)
