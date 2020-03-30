@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<%- include('layouts/header.ejs');-%>
+<body>
+<%- include('layouts/navbar'); -%>
+<h1>Log ind for at benytte vores produkter</h1>
+
+<form>
+
+    <p>username</p>
+    <input type="text" name="username" placeholder="enter username" >
+    <p>password</p>
+    <input type="password" name="password" placeholder="enter password">
+    <hr>
+    <input type="submit" name="submitLoginBtn" value="Login">
+    <div class="container signup">
+        <p>You don't have an account? <a href="/register">Sign up</a>.</p>
+    </div>
+
+</form>
+
+</body>
+</html>

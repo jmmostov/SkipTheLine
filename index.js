@@ -7,23 +7,13 @@ const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const path = require('path')
 
-let indexRouter = require('./routes/index');
-let usersRouter = require('./routes/users');
-
-
 mongoose.connect('mongodb://localhost/skiptheline', {useNewUrlParser: true, useUnifiedTopology: true});
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-
-app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
-
-const http = require('http')
-const server = http.createServer((req,res)=>{
-
-});
+app.use(bodyParser.json())
 
 app.use(express.static('public'))
 app.use(session({
@@ -34,10 +24,10 @@ app.use(session({
     cookie: {maxAge: 180 * 60 * 1000}
 }))
 
+let indexRouter = require('./routes/index');
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 app.listen(3000,()=>{
     console.log("App listening on port 3000")
 });
-

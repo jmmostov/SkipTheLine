@@ -1,19 +1,23 @@
-const express = require('express');
-const router = express.Router();
-const Product = require('../models/Product');
+var express = require('express');
+var router = express.Router();
 
+const newUserController = require('../controller/newUser')
+const storeUserController = require('../controller/storeUser')
+const homeController = require('../controller/homeController')
+const loginController = require('../controller/loginController')
+const logoutController = require('../controller/logoutController')
 
-/* GET all products */
-router.get('/', function(req, res, next) {
-    let products = Product.find();
-    res.render('index', {
-        productSchema: products
-    });
-});
+/* GET home page. */
+router.get('/', homeController)
 
+//Router to Register page
+router.get('/register', newUserController)
+router.post('/users/register', storeUserController)
 
+//Router to login page
+router.get('/login', loginController)
 
-// POST new products
-router.post('/product/new', )
+//Router to logout page
+router.get('/logout', logoutController)
 
 module.exports = router;
