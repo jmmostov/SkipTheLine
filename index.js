@@ -7,15 +7,20 @@ const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const path = require('path')
 
+//let usersRouter = require('./routes/users');
+
 mongoose.connect('mongodb://localhost/skiptheline', {useNewUrlParser: true, useUnifiedTopology: true});
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({extended:true}))
-app.use(bodyParser.json())
 
-app.use(express.static('public'))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:true}))
+
+
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
@@ -31,3 +36,4 @@ app.use('/', indexRouter);
 app.listen(3000,()=>{
     console.log("App listening on port 3000")
 });
+

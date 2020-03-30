@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<%- include('layouts/header.ejs');-%>
+
+<body>
+<h1>
+    Admin can register a linestander and update/delete linestander
+</h1>
+
+<form action="/users/registerLinestander" method="POST" enctype="application/x-www-form-urlencoded">
+    <div class="container">
+        <hr>
+        <h3> REGISTER new linestander</h3>
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <label for="Username"><b>linestander name</b></label><br>
+                <input type="text" placeholder="Username" id="username" name="username">
+            </div>
+        </div>
+        <br>
+        <div class="control-group">
+            <div class="form-group floating-label-form-group control">
+                <label for="psw"><b>linestander password</b></label><br>
+                <input type="password" placeholder="Enter Password" id="password" name="password">
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="registerbtn">Register</button>
+        <hr>
+
+    </div>
+</form>
+
+<section class="get">
+    <h3> GET data</h3>
+    <a href="/get-data"> Load data</a>
+
+    <div>
+        <% for(var i = 0; i < users.length; i++) { %>
+       <article class="item">
+           <br>
+           <div> Username: <%= users[i].username %> </div>
+           <br>
+           <div> Password: <%= users[i].password %> </div>
+           <br>
+           <div> ID: <%= users[i]._id %> </div>
+       </article>
+        <% } %>
+    </div>
+
+</section>
+
+<section class="update">
+    <h3>UPDATE data</h3>
+    <form action="/update" method="post">
+        <div class="input">
+            <label for="id"> ID </label>
+            <input type="text" id="id" name="id">
+        </div>
+        <br>
+        <div class="input">
+            <label for="username"> Username </label>
+            <input type="text" id="username" name="username">
+        </div>
+        <br>
+        <button type="submit"> Update</button>
+    </form>
+</section>
+
+<%- include('layouts/scripts');-%>
+</body>
+
+</html>
