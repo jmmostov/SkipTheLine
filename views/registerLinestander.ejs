@@ -35,17 +35,13 @@
 
 <section class="get">
     <h3> GET data</h3>
-    <a href="/get-data"> Load data</a>
-
     <div>
         <% for(var i = 0; i < users.length; i++) { %>
-       <article class="item">
+       <article class="data">
+           <hr>
+           <div> <b>Username:</b> <%= users[i].username %> </div>
            <br>
-           <div> Username: <%= users[i].username %> </div>
-           <br>
-           <div> Password: <%= users[i].password %> </div>
-           <br>
-           <div> ID: <%= users[i]._id %> </div>
+           <div> <b>ID:</b>  <%= users[i]._id %></div>
        </article>
         <% } %>
     </div>
@@ -69,24 +65,48 @@
     </form>
 </section>
 
+<section class="new_product">
+    <h3>ADD A NEW PRODUCT</h3>
+    <form action="/product/new" method ="POST" enctype="application/x-www-form-urlencoded">
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <div class="input">
+                    <label>New product</label>
+                    <input type="text" class="form-control" placeholder="Product name" id="productName" name="productName">
+                </div>
+            </div>
+            <br>
+        </div>
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <div class="input">
+                    <label>Price</label>
+                    <input type="number" class="form-control" placeholder="Product price" id="price" name="price">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" id="addProduct">Add order</button>
+        </div>
+    </form>
+</section>
 
-<form action="/product/new" method ="POST" enctype="application/x-www-form-urlencoded">
-    <div class="control-group">
-        <div class="form-group floating-label-form-group controls">
-            <label>New product</label>
-            <input type="text" class="form-control" placeholder="Product name" id="productName" name="productName">
+<section class="delete">
+    <h3>DELETE</h3>
+    <form action="/product/new" method ="POST" enctype="application/x-www-form-urlencoded">
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <div class="input">
+                    <label>Delete</label>
+                    <input type="text" class="form-control" placeholder="Delete" id="productName" name="productName">
+                </div>
+            </div>
+            <br>
         </div>
-    </div>
-    <div class="control-group">
-        <div class="form-group floating-label-form-group controls">
-            <label>Price</label>
-            <input type="number" class="form-control" placeholder="Product price" id="price" name="price">
-        </div>
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary" id="addProduct">Add order</button>
-    </div>
-</form>
+
+    </form>
+</section>
 
 <%- include('layouts/scripts');-%>
 </body>

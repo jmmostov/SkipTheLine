@@ -1,6 +1,6 @@
 // https://www.youtube.com/watch?v=VKuY8QscZwY&t=407s
 
-const express = require('express');
+/*const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
@@ -135,4 +135,4 @@ router.delete(":/orderID", (req, res, next) => {
         });
 });
 
-module.exports = router;
+module.exports = router; */

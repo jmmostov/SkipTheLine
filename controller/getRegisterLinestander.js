@@ -1,15 +1,10 @@
-const User = require('../models/User')
+var User = require('../models/User');
+var info = User.find({userType: 'linestander'});
 
-module.exports = (req,res)=> {
-    // Here we made sure that only admins can enter the side since we made the adminCheck in our loginUser.js
-    if (req.session.adminCheck == "admin") {
-
-        const users = User.find({})
-
-        res.render('registerLinestander', {
-            users
-        })
-    }
-    // you will get rendered our error page if your userType is not "admin".
-    else res.render('error');
+module.exports = async (req,res)=>{
+    await info.exec(function(err,user) {
+        if(err) throw err;
+        res.render('registerLinestander', {users: user});
+    });
 };
+
