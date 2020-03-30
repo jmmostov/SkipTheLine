@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=VKuY8QscZwY&t=407s
+
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
@@ -5,7 +7,7 @@ const mongoose = require('mongoose');
 const Order = require('../models/Order');
 const lineItem = require('../models/lineItem'); // skal referere til lineItem når den implementeres.
 
-//Incoming GET requests to orders
+//Incoming GET requests to orders. Find order.
 router.get('/', (req, res, next) => {
     Order.find()
         .select('lineItem orderID status deliveryLocation billingAddress')
@@ -37,6 +39,7 @@ router.get('/', (req, res, next) => {
         });
 });
 
+// create new order.
 router.post('/', (req, res, next) => {
     lineItem.findById(req.session.userID) //skal rettes til ift. UserID/product ID... evt. body.userID
         .then(lineItem => {
@@ -108,6 +111,8 @@ router.get("/:orderID", (req, res, next) => {
         });
 });
 
+
+// Delete order
 router.delete(":/orderID", (req, res, next) => {
     Order.remove({ orderID: req.params.orderID})
         .exec()
