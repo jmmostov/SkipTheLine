@@ -36,11 +36,12 @@ app.use(session({
     cookie: {maxAge: 180 * 60 * 1000}
 }))
 
-let indexRouter = require('./routes/index');
 
-app.use('/', indexRouter);
 
 app.listen(3000,()=>{
     console.log("App listening on port 3000")
 });
 
+let indexRouter = require('./routes/index');
+
+app.use('/', indexRouter);
