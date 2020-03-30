@@ -12,6 +12,8 @@ module.exports = (req,res)=>{
         else if(user){
             bcrypt.compare(password,user.password,(error,same)=>{
                 if(same && user.userType == "customer") {
+                    //henter id for brugeren og gemmer det i browserens session. 
+                    req.session.userId = user._id
                     res.redirect('/')
                 }
                 else if(same && user.userType == "linestander") {
