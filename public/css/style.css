@@ -42,6 +42,10 @@ section h3 {
     background: #3498db;
 }
 
+.new_product {
+    background: lightskyblue;
+}
+
 .delete {
     background: #e74c3c;
 }
