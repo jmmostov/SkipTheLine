@@ -11,13 +11,13 @@ const lineItem = require('../models/lineItem'); // skal referere til lineItem n�
 router.get('/', (req, res, next) => {
     Order.find()
         .select('lineItem orderID status deliveryLocation billingAddress')
-        .exec()
+        .exec() // creates a promise
         .then(docs => {
             res.status(200).json({
                 count: docs.length,
                 orders: docs.map(doc => {
                     return {
-                        orderID: doc.orderID,
+                        _id: doc._id,
                         user: doc.user,
                         lineItem: doc.lineItem,
                         status: doc.status,
@@ -29,9 +29,8 @@ router.get('/', (req, res, next) => {
                         }
                         }
                     })
-                }
+                })
             });
-        })
         .catch(err => {
             res.status(500).json({
                 error: err
@@ -44,12 +43,12 @@ router.post('/', (req, res, next) => {
     lineItem.findById(req.session.userID) //skal rettes til ift. UserID/product ID... evt. body.userID
         .then(lineItem => {
             if(!lineItem) {
-                return.res.status(404).json({
+                return res.status(404).json({
                     message: 'Product not found'
                 });
             }
             const order = new Order({
-                orderID: mongoose.Types.ObjectId(),
+                _id: mongoose.Types.ObjectId(),
                 user: req.body.user,
                 lineItem: req.body.lineItem,
                 status: req.body.status, // ikke sikker om den virker
@@ -64,7 +63,7 @@ router.post('/', (req, res, next) => {
             res.status(201).json({
                 message: 'Order stored!',
                 createdOrder: {
-                    orderID: result.orderID,
+                    _id: result._id,
                     user: result.user,
                     lineItem: result.lineItem,
                     status: result.status,
@@ -72,8 +71,8 @@ router.post('/', (req, res, next) => {
                     billingAddress: result.billingAddress
                 },
                 request: {
-                    type: 'GET'
-                    url: 'http://localhost:3000/orders/' + result.orderID
+                    type: 'GET',
+                    url: 'http://localhost:3000/orders/' + result._id
                 }
             })
                 .catch(err => {
@@ -88,7 +87,7 @@ router.post('/', (req, res, next) => {
 
 // tjek op på om det skal være et andet orderID ref, eks. orderId
 router.get("/:orderID", (req, res, next) => {
-    Order.findById(req.params.orderID)
+    Order.findById(req.params._id)
         .exec()
         .then(order => {
             if(!order){
@@ -97,9 +96,9 @@ router.get("/:orderID", (req, res, next) => {
                 });
             }
             res.status(200).json({
-              order: order
+              order: order,
               request: {
-                  type: 'GET'
+                  type: 'GET',
                   url: 'http://localhost:3000/orders'
               }
             });
@@ -114,13 +113,13 @@ router.get("/:orderID", (req, res, next) => {
 
 // Delete order
 router.delete(":/orderID", (req, res, next) => {
-    Order.remove({ orderID: req.params.orderID})
+    Order.remove({ _id: req.params._id})
         .exec()
         .then(result => {
             res.status(200).json({
-                message: 'Order deleted'
+                message: 'Order deleted',
                 request: {
-                    type: 'POST'
+                    type: 'POST',
                     url: 'http://localhost:3000/orders',
                     body: {
                         orderID: 'ID',
@@ -134,6 +133,6 @@ router.delete(":/orderID", (req, res, next) => {
                 error: err
             });
         });
-})
+});
 
 module.exports = router;
