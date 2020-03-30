@@ -11,8 +11,8 @@ section {
     float: left;
     background: #bdc3c7;
     padding: 10px;
-    margin: 30px;
-    width: 300px;
+    margin: 15px;
+    width: 285px;
     box-shadow: 3px 3px 1px #34495e;
     min-height: 400px;
 }
@@ -47,7 +47,7 @@ section h3 {
 }
 
 .delete {
-    background: #e74c3c;
+    background: lightsteelblue;
 }
 
 .input label {
