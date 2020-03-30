@@ -28,8 +28,8 @@ router.get('/', (req, res, next) => {
                             url:  'http://localhost:3000/orders/' + doc.orderID
                         }
                         }
-                    }
-                })
+                    })
+                }
             });
         })
         .catch(err => {
