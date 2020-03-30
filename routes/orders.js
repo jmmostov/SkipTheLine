@@ -28,10 +28,9 @@ router.get('/', (req, res, next) => {
                             url:  'http://localhost:3000/orders/' + doc.orderID
                         }
                         }
-                    }
+                    })
                 })
-            });
-        })
+            })
         .catch(err => {
             res.status(500).json({
                 error: err
@@ -44,7 +43,7 @@ router.post('/', (req, res, next) => {
     lineItem.findById(req.session.userID) //skal rettes til ift. UserID/product ID... evt. body.userID
         .then(lineItem => {
             if(!lineItem) {
-                return.res.status(404).json({
+                return res.status(404).json({
                     message: 'Product not found'
                 });
             }
@@ -72,7 +71,7 @@ router.post('/', (req, res, next) => {
                     billingAddress: result.billingAddress
                 },
                 request: {
-                    type: 'GET'
+                    type: 'GET',
                     url: 'http://localhost:3000/orders/' + result.orderID
                 }
             })
@@ -97,9 +96,9 @@ router.get("/:orderID", (req, res, next) => {
                 });
             }
             res.status(200).json({
-              order: order
+              order: order,
               request: {
-                  type: 'GET'
+                  type: 'GET',
                   url: 'http://localhost:3000/orders'
               }
             });
@@ -118,9 +117,9 @@ router.delete(":/orderID", (req, res, next) => {
         .exec()
         .then(result => {
             res.status(200).json({
-                message: 'Order deleted'
+                message: 'Order deleted',
                 request: {
-                    type: 'POST'
+                    type: 'POST',
                     url: 'http://localhost:3000/orders',
                     body: {
                         orderID: 'ID',

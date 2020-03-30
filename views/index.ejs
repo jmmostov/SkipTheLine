@@ -12,29 +12,6 @@
     Welcome to Skip The Line
 </p>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-            <!-- <form action="/lineItem/new" methed="POST"> -->
-                <% for(var i = 0; i < products.length; i++) { %>
-                    <div class="post-preview">
-                        <img src="<% products[i].imagePath %>">
-                        <h2 class="post-title">
-                            <%= products[i].title %>
-                        </h2>
-                        <h3 class="post-subtitle">
-                            <%= products[i].price + ",-"%>
-                        </h3>
-                        <p>
-                            <%= products[i].description%>
-                        </p>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary" id="addLineItem">Add to cart</button>
-                    </div>
-                <% } %>
-           <!-- ></form> -->
 
 </body>
 </html>

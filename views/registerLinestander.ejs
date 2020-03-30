@@ -35,19 +35,20 @@
 
 <section class="get">
     <h3> GET data</h3>
-    <a href="/get-data"> Load data</a>
 
     <div>
-        <% for(var i = 0; i < users.length; i++) { %>
+
        <article class="item">
            <br>
-           <div> Username: <%= users[i].username %> </div>
+           <% for(var i = 0; i < users.length; i++) { %>
+           <div> <p>Username: <%= users[i].username %></p> </div>
            <br>
-           <div> Password: <%= users[i].password %> </div>
+           <div> <p>Password: <%= users[i].password %></p> </div>
            <br>
-           <div> ID: <%= users[i]._id %> </div>
+           <div> <p>ID: <%= users[i]._id %></p> </div>
+           <% } %>
        </article>
-        <% } %>
+
     </div>
 
 </section>
@@ -68,6 +69,25 @@
         <button type="submit"> Update</button>
     </form>
 </section>
+
+
+<form action="/product/new" method ="POST" enctype="application/x-www-form-urlencoded">
+    <div class="control-group">
+        <div class="form-group floating-label-form-group controls">
+            <label>New product</label>
+            <input type="text" class="form-control" placeholder="Product name" id="productName" name="productName">
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="form-group floating-label-form-group controls">
+            <label>Price</label>
+            <input type="number" class="form-control" placeholder="Product price" id="price" name="price">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary" id="addProduct">Add order</button>
+    </div>
+</form>
 
 <%- include('layouts/scripts');-%>
 </body>

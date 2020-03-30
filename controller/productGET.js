@@ -5,7 +5,7 @@ module.exports = async (req,res)=> {
     const products = await Product.find({});   
 
     // Now we respond with the page creating all our products from our database.
-    res.render('index',{
+    res.render('productShow',{
         products
     });
 };
