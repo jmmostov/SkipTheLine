@@ -10,6 +10,7 @@ const adminLoginController = require('../controller/getRegisterLinestander')
 const storeLinestanderController = require('../controller/storeLinestander')
 const getDataAdminController = require('../controller/getDataForAdmin')
 const updateDataAdminController = require('../controller/updateDataForAdmin')
+const logoutController = require('../controller/logoutController')
 
 /* GET home page. */
 router.get('/', homeController)
@@ -32,3 +33,6 @@ router.get('/get-data', getDataAdminController)
 router.post('/update',updateDataAdminController)
 
 module.exports = router;
+
+//Router to logout page
+router.get('/logout', logoutController)
