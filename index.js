@@ -10,7 +10,7 @@ const path = require('path')
 
 //let usersRouter = require('./routes/users');
 
-mongoose.connect('mongodb://localhost/skiptheline', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://Ramaran:LineStander123@skiptheline-asftb.mongodb.net/skiptheline', {useNewUrlParser: true, useUnifiedTopology: true});
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -44,10 +44,18 @@ app.use("*",(req,res,next)=>{
 
 
 
-
-app.listen(3000,()=>{
+let port = process.env.PORT;
+if(port == null || port == ""){
+    port = 4000;
+}
+app.listen(port,()=>{
+    console.log('App listening...')
+});
+/*app.listen(3000,()=>{
     console.log("App listening on port 3000")
 });
+
+ */
 
 let indexRouter = require('./routes/index');
 
