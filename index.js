@@ -46,16 +46,20 @@ app.use("*",(req,res,next)=>{
 
 let port = process.env.PORT;
 if(port == null || port == ""){
-    port = 4000;
+    port = 3000;
 }
 app.listen(port,()=>{
     console.log('App listening...')
 });
+
+
+
 /*app.listen(3000,()=>{
     console.log("App listening on port 3000")
 });
 
  */
+
 
 let indexRouter = require('./routes/index');
 
