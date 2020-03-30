@@ -6,7 +6,10 @@ module.exports = (req,res)=>{
 
     User.findOne({username:username},(error,user)=>{
         if(username == "admin" && password == "admin123") {
-            console.log(user)
+            console.log(user);
+            if (user.userType == "admin") {
+                req.session.adminCheck = user.userType;
+            }
             res.redirect('/registerLinestander')
         }
         else if(user){

@@ -12,6 +12,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                 </li>
+                <% if(admin) { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/registerLinestander">Admin page</a>
+                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Log out</a>
+                    </li>
+                <% } %>
+
                 <% if(!loggedIn) { %>
                 <li class="nav-item">
                     <a class="nav-link" href="/register">New User</a>
@@ -20,15 +29,17 @@
                     <a class="nav-link" href="/login">Login</a>
                 </li>
                 <% } %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/products">Products</a>
+                </li>
+                <% if(loggedIn) { %>
                     <li class="nav-item">
                         <a class="nav-link" href="/logout">Log out</a>
                     </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/products">Products</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="/lineItems">Shopping cart</a>
                 </li>
+                <% } %>
             </ul>
         </div>
     </div>

@@ -36,6 +36,15 @@ app.use("*",(req, res, next)=>{
     next()
 });
 
+global.admin = null;
+app.use("*",(req,res,next)=>{
+    admin = req.session.adminCheck
+    next();
+});
+
+
+
+
 app.listen(3000,()=>{
     console.log("App listening on port 3000")
 });
