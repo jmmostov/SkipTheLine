@@ -10,7 +10,7 @@ const path = require('path')
 
 //let usersRouter = require('./routes/users');
 
-mongoose.connect('mongodb+srv://Ramaran:LineStander123@skiptheline-asftb.mongodb.net/skiptheline', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://admin:AdminPassword@skiptheline-asftb.mongodb.net/skiptheline', {useNewUrlParser: true, useUnifiedTopology: true});
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -43,7 +43,8 @@ app.use("*",(req,res,next)=>{
 });
 
 
-
+/*
+// Lortet virker ikke... Det skulle ellers forestille at være måden at åbne porten via heroku...
 let port = process.env.PORT;
 if(port == null || port == ""){
     port = 3000;
@@ -53,12 +54,13 @@ app.listen(port,()=>{
 });
 
 
+ */
 
-/*app.listen(3000,()=>{
+
+app.listen(3000,()=>{
     console.log("App listening on port 3000")
 });
 
- */
 
 
 let indexRouter = require('./routes/index');
