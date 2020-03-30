@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<%- include('layouts/header.ejs');-%>
+
+<body>
+<%- include('layouts/navbar.ejs');-%>
+
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <% for(var i = 0; i < products.length; i++) { %>
+                <div class="post-preview">
+                    <h2 class="post-title">
+                        <%= products[i].productName %>
+                    </h2>
+                    <h3 class="post-subtitle">
+                        <%= products[i].price + ",-"%>
+                    </h3>
+                </div>
+                <div class="form-group">
+                    <a href="/lineItem/<%= products[i]._id%>" class="btn btn-primary" role="button">Add to cart</a>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+
+<%- include('layouts/scripts');-%>
+</body>
+
+</html>

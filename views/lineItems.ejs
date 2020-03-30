@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<%- include('layouts/header.ejs');-%>
+
+<body>
+<%- include('layouts/navbar.ejs');-%>
+
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <% for(var i = 0; i < products.length; i++) { %>
+                <div class="post-preview">
+                    <h1 class="post-title">
+                        <%= products[i].product.productName + " " + products[i].product.price%>,-
+                    </h1>
+                    <h4 class="post-subtitle">
+                        Quantity: <%= products[i].qty%>
+                    </h4>
+                    <h4 class="post-subtitle">
+                        Price for these products: <%= products[i].price%>,-
+                    </h4>
+                    <br>
+                    <br>
+
+                </div>
+            <% } %>
+
+            <br>
+
+            <div class="clearfix">
+                <a class="btn btn-primary float-right" href="#">Order</a>
+                <h2 class="post-title" style="float: right; margin-right: 10px">
+                    Total price: <%= totalPrice%>,-
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('layouts/scripts');-%>
+</body>
+
+</html>

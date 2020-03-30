@@ -3,10 +3,10 @@ const Schema = mongoose.Schema;
 
 
 const orderSchema = new Schema({
-    orderID: mongoose.Schema.Types.ObjectId,
     user: {
         type: Schema.Types.ObjectID,
         ref: 'User'
+
     },
     status: { 
         type: Boolean, 
