@@ -6,6 +6,7 @@ const orderSchema = new Schema({
     user: {
         type: Schema.Types.ObjectID,
         ref: 'User'
+
     },
     status: { 
         type: Boolean, 

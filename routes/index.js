@@ -29,6 +29,9 @@ router.post('/users/register', storeUserController)
 router.get('/login',loginController)
 router.post('/users/login', loginUserController)
 
+//Router to logout page
+router.get('/logout', logoutController)
+
 //router to admin login page
 router.get('/registerLinestander', adminLoginController)
 router.post('/users/registerLinestander', storeLinestanderController)
