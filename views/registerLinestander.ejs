@@ -50,7 +50,7 @@
 
 <section class="update">
     <h3>UPDATE data</h3>
-    <form action="/update" method="post">
+    <form action="/update" method="post" enctype="application/x-www-form-urlencoded">
         <div class="input">
             <label for="id"> ID </label>
             <input type="text" id="id" name="id">
@@ -94,16 +94,18 @@
 
 <section class="delete">
     <h3>DELETE</h3>
-    <form action="/product/new" method ="POST" enctype="application/x-www-form-urlencoded">
+    <form action="/delete" method ="POST" enctype="application/x-www-form-urlencoded">
         <div class="control-group">
             <div class="form-group floating-label-form-group controls">
                 <div class="input">
-                    <label>Delete</label>
-                    <input type="text" class="form-control" placeholder="Delete" id="productName" name="productName">
+                    <label>ID</label>
+                    <input type="text" class="form-control" placeholder="ID" id="id" name="id">
                 </div>
             </div>
+            <div></div>
             <br>
         </div>
+        <button type="submit"> Delete</button>
 
     </form>
 </section>

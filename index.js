@@ -12,6 +12,10 @@ const path = require('path')
 
 mongoose.connect('mongodb+srv://admin:AdminPassword@skiptheline-asftb.mongodb.net/skiptheline', {useNewUrlParser: true, useUnifiedTopology: true});
 
+//for at benytte updateOne metoden, skal man åbenbart sætte false som default
+mongoose.set('useFindAndModify',false);
+
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -55,7 +59,6 @@ app.listen(port,()=>{
 
 
  */
-
 
 app.listen(3000,()=>{
     console.log("App listening on port 3000")

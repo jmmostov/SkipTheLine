@@ -10,6 +10,7 @@ const adminLoginController = require('../controller/getRegisterLinestander')
 const storeLinestanderController = require('../controller/storeLinestander')
 const updateDataAdminController = require('../controller/updateDataForAdmin')
 const logoutController = require('../controller/logoutController')
+const deleteAdminController = require('../controller/deleteDataAdmin')
 
 // PRODUCTS:
 const productGET = require('../controller/productGET');
@@ -41,6 +42,7 @@ router.post('/users/registerLinestander', storeLinestanderController)
 //router.get('/get-data', getDataAdminController,)
 
 router.post('/update',updateDataAdminController)
+router.post('/delete', deleteAdminController)
 
 // PRODUCTS:
 // We try to show all products from the database.
