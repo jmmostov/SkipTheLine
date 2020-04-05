@@ -7,6 +7,8 @@ const mongoose = require('mongoose');
 const Order = require('../models/Order');
 const lineItem = require('../models/lineItem'); // skal referere til lineItem når den implementeres.
 
+
+// Denne skal måske undlades. Har lidt svært ved at se, hvad den faktisk gør.
 //Incoming GET requests to orders. Find order.
 router.get('/', (req, res, next) => {
     Order.find()
@@ -37,6 +39,8 @@ router.get('/', (req, res, next) => {
             });
         });
 });
+
+
 
 // create new order.
 router.post('/', (req, res, next) => {
@@ -110,7 +114,7 @@ router.get("/:orderID", (req, res, next) => {
         });
 });
 
-
+// skal måske rykkes tl admin
 // Delete order
 router.delete(":/orderID", (req, res, next) => {
     Order.remove({ _id: req.params._id})

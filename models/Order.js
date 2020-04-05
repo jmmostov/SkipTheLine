@@ -4,9 +4,8 @@ const Schema = mongoose.Schema;
 
 const orderSchema = new Schema({
     user: {
-        type: Schema.Types.ObjectID,
+        type: moongoose.Schema.Types.ObjectID,
         ref: 'User'
-
     },
     status: { 
         type: Boolean, 
@@ -16,16 +15,11 @@ const orderSchema = new Schema({
         type: String,
         required: true
     },// kommentar til hvor man er på RF.
+/*
     lineItem: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'LineItem', required: true
-    }, // Ret til, når LineItem er klar
+        ref: 'LineItem',
+    }, */// Ret til, når LineItem er klar
     billingAddress: {
-        customerID: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'customerID',
-            required: true
-        }, // Ret til, når User er klar
         streetName: {
             type: String,
             required: true
