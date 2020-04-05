@@ -8,7 +8,7 @@ module.exports = async (req,res)=>{
         if(err) {
             console.log(err)
         }
-        res.render('registerLinestander', {users: user});
+        res.redirect('/registerLinestander');
     });
 };
 
