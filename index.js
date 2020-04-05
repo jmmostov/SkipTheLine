@@ -10,7 +10,7 @@ const path = require('path')
 
 //let usersRouter = require('./routes/users');
 
-mongoose.connect('mongodb+srv://admin:AdminPassword@skiptheline-asftb.mongodb.net/skiptheline', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://Ramaran:LineStander123@skiptheline-asftb.mongodb.net/skiptheline', {useNewUrlParser: true, useUnifiedTopology: true});
 
 //for at benytte updateOne metoden, skal man åbenbart sætte false som default
 mongoose.set('useFindAndModify',false);
