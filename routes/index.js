@@ -10,7 +10,9 @@ const adminLoginController = require('../controller/getRegisterLinestander')
 const storeLinestanderController = require('../controller/storeLinestander')
 const updateDataAdminController = require('../controller/updateDataForAdmin')
 const logoutController = require('../controller/logoutController')
-const deleteAdminController = require('../controller/deleteDataAdmin')
+//const deleteAdminController = require('../controller/deleteDataAdmin')
+const orderGET = require('../controller/orderGET');
+const orderSTORE = require('../controller/orderSTORE');
 
 // PRODUCTS:
 const productGET = require('../controller/productGET');
@@ -42,7 +44,7 @@ router.post('/users/registerLinestander', storeLinestanderController)
 //router.get('/get-data', getDataAdminController,)
 
 router.post('/update',updateDataAdminController)
-router.post('/delete', deleteAdminController)
+//router.post('/delete', deleteAdminController)
 
 // PRODUCTS:
 // We try to show all products from the database.
@@ -61,5 +63,16 @@ router.get('/lineItem/:id', lineItemSTORE);
 
 // Now, we access the controller to show all the lineItems when trying to access the route '/lineItems'
 router.get('/lineItems',lineItemGET);
+
+
+
+// ORDER:
+
+router.post('/order/new',orderSTORE);
+
+router.get('/order',orderGET);
+
+
+
 
 module.exports = router;

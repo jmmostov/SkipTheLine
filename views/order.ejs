@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<%- include('layouts/header.ejs');-%>
+
+<body>
+<%- include('layouts/navbar.ejs');-%>
+<h1>
+    Place your order here
+    <br>
+</h1>
+<h2>You have ordered for <%= totalPrice%>,- </h2>
+
+<form action="/order/new" method="POST" enctype="application/x-www-form-urlencoded">
+    <div class="container">
+        <p>Please fill in this form to place an order.</p>
+        <hr>
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <label for="deliveryLocation"><b>Delivery Location:</b></label>
+                <input type="text" placeholder="Where would you like to pick up your order?" id="deliveryLocation" name="deliveryLocation">
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="control-group">
+            <div class="form-group floating-label-form-group control">
+                <label for="address"><h3 style="font-size: 22px">Billing Address</h3></label>
+                <label for="streetName"><b>Street name:</b></label>
+                <input type="text" placeholder="Enter the name of your street" id="streetName" name="streetName">
+                <br>
+                <label for="streetNr"><b>Street number:</b></label>
+                <input type="number" placeholder="Enter your street number" id="streetNr" name="streetNr">
+                <br>
+                <label for="zipCode"><b>ZIP code:</b></label>
+                <input type="number" placeholder="Enter your ZIP code" id="zipCode" name="zipCode">
+                <br>
+                <label for="city"><b>City:</b></label>
+                <input type="text" placeholder="Enter your city" id="city" name="city">
+                <br>
+                <label for="country"><b>Country:</b></label>
+                <input type="text" placeholder="Enter your country" id="country" name="country">
+            </div>
+        </div>
+        <br>
+        <hr>
+        <button type="submit" class="registerbtn">Place order</button>
+    </div>
+
+</form>
+<%- include('layouts/scripts');-%>
+</body>
+
+</html>

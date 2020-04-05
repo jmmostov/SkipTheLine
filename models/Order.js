@@ -4,10 +4,10 @@ const Schema = mongoose.Schema;
 
 const orderSchema = new Schema({
     user: {
-        type: Schema.Types.ObjectID,
+        type: mongoose.Schema.Types.ObjectID,
         ref: 'User'
-
     },
+    // The status of the order. It's true by default because it's ongoing.
     status: { 
         type: Boolean, 
         default: true 
@@ -17,15 +17,10 @@ const orderSchema = new Schema({
         required: true
     },// kommentar til hvor man er på RF.
     lineItem: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'LineItem', required: true
+        //ref: 'LineItem'
     }, // Ret til, når LineItem er klar
     billingAddress: {
-        customerID: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'customerID',
-            required: true
-        }, // Ret til, når User er klar
+        // Ret til, når User er klar
         streetName: {
             type: String,
             required: true

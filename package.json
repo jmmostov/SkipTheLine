@@ -12,8 +12,8 @@
     "url": "git+https://github.com/jmmostov/SkipTheLine.git"
   },
   "author": "",
-  "engines":{
-  "node": "12.16.0"
+  "engines": {
+    "node": "12.16.0"
   },
   "license": "ISC",
   "bugs": {
