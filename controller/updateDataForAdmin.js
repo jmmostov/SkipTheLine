@@ -1,5 +1,4 @@
 //update username via objectId that has been created by mongoDB
-
 var User = require('../models/User');
 
 /*
@@ -9,7 +8,7 @@ module.exports = function (req,res) {
             res.send(user')
         })
     });
-}*/
+}
 
 
 module.exports = async function(req,res) {
@@ -18,7 +17,28 @@ module.exports = async function(req,res) {
             console.log('errormessage ' + err);
         }
        // res.send(user)
-        return res.redirect('/registerLinestander')
+        return res.redirect(303,'/registerLinestander')
     });
 };
+ */
+
+console.log('hallo')
+module.exports = function(req,res) {
+    console.log('test 1 ')
+    const formUpdate = req.body.formButton;
+   // var updateForm = req.getElementById('updateForm');
+    console.log('test 2 ')
+    formUpdate.onsubmit = (event) => {
+        event.preventDefault();
+
+        fetch('registerLinestander', {
+            method: 'PUT',
+            body: new FormData(formUpdate)
+        }).then(response => response.json())
+            .then(json => console.log(json))
+    };
+}
+
+
+
 
