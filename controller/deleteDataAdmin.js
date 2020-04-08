@@ -2,7 +2,7 @@
 var User = require('../models/User');
 
 module.exports = async function (req,res) {
-    await User.findByIdAndDelete({"_id": req.body.id}, (err,user)=> {
+    await User.findByIdAndDelete({"_id": req.body.deleteId}, (err,user)=> {
         if(err) {
             console.log(err);
         }

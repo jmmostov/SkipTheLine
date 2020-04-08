@@ -45,9 +45,8 @@ router.post('/users/registerLinestander', storeLinestanderController)
 //admin routers
 //router.get('/get-data', getDataAdminController,)
 
-router.put('/update/:id',updateDataAdminController)
-
-router.delete('/delete', deleteAdminController)
+router.put('/update',updateDataAdminController)
+router.post('/delete/:id', deleteAdminController)
 
 // PRODUCTS:
 // We try to show all products from the database.

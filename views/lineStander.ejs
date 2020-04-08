@@ -4,23 +4,44 @@
 <%- include('layouts/header.ejs');-%>
 <body>
 <%- include('layouts/navbar.ejs');-%>
-<h1>Log ind for at benytte vores produkter</h1>
 
-<form action="/users/login" method="POST" enctype="application/x-www-form-urlencoded" >
-
-    <p>username</p>
-    <input type="text" name="username" placeholder="enter username" >
-    <p>password</p>
-    <input type="password" name="password" placeholder="enter password">
-    <hr>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Login</button>
+<section class="get">
+    <h3> GET data</h3>
+    <div>
+        <% for(var i = 0; i < order.length; i++) { %>
+            <article class="data">
+                <hr>
+                <div> <b>Delivery Location:</b> <%= order[i].deliveryLocation %> </div>
+                <br>
+                <% for(var u = 0; u < order[i].lineItem.items._id.length; u++) { %>
+                    <hr>
+                    <div> <b>Product:</b> <%= order[i].lineItem.items._id[u].product.productName %> </div>
+                    <br>
+            </article>
+        <% } %>
+            <% } %>
     </div>
-    <div class="container signup">
-        <p>You don't have an account? <a href="/register">Sign up</a>.</p>
-    </div>
+</section>
 
-</form>
+<!--
+<section class="update">
+    <h3>UPDATE data</h3>
+    <form id="updateForm" name="updateForm" action="/update/:id" enctype="application/x-www-form-urlencoded">
+        <div class="input">
+            <label for="id"> ID </label>
+            <input type="text" id="id" name="id">
+        </div>
+        <br>
+        <div class="input">
+            <label for="username"> Username </label>
+            <input type="text" id="updateUsername" name="updateUsername">
+        </div>
+        <br>
+        <button type="submit"> Update</button>
+    </form>
+</section>
+-->
+
 <%- include('layouts/scripts');-%>
 </body>
 </html>

@@ -8,9 +8,13 @@ const orderSchema = new Schema({
         ref: 'User'
     },
     // The status of the order. It's true by default because it's ongoing.
-    status: { 
+    pickedUp: {
+        type: Boolean,
+        default: false
+    },
+    delivered: { 
         type: Boolean, 
-        default: true 
+        default: false
     },
     deliveryLocation: {
         type: String,

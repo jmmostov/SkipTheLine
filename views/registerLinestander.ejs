@@ -57,10 +57,10 @@
         <br>
         <div class="input">
             <label for="username"> Username </label>
-            <input type="text" id="username" name="username">
+            <input type="text" id="updateUsername" name="updateUsername">
         </div>
         <br>
-        <button type="submit" id="formButton" name="formButton" formmethod="get"> Update</button>
+        <button type="submit"> Update</button>
     </form>
 </section>
 
@@ -93,12 +93,12 @@
 
 <section class="delete">
     <h3>DELETE</h3>
-    <form action="/delete" method ="POST" enctype="application/x-www-form-urlencoded">
+    <form action="/delete/:id" method ="POST" enctype="application/x-www-form-urlencoded">
         <div class="control-group">
             <div class="form-group floating-label-form-group controls">
                 <div class="input">
                     <label>ID</label>
-                    <input type="text" class="form-control" placeholder="ID" id="id" name="id">
+                    <input type="text" class="form-control" placeholder="ID" id="deleteId" name="deleteId">
                 </div>
             </div>
             <div></div>
