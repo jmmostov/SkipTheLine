@@ -6,7 +6,7 @@ module.exports = (req,res)=>{
 
     User.findOne({username:username},(error,user)=>{
         if(username == "admin" && password == "admin123") {
-            console.log(user);
+            console.log(user)
             if (user.userType == "admin") {
                 req.session.adminCheck = user.userType;
             }
@@ -21,6 +21,7 @@ module.exports = (req,res)=>{
                     res.redirect('/')
                 }
                 else if(same && user.userType == "linestander") {
+                    req.session.userId = user._id
                     res.redirect('/')
                 }
                 else {

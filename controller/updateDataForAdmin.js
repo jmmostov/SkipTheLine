@@ -22,8 +22,8 @@ module.exports = async function(req,res) {
 };
  */
 
-console.log('hallo')
-module.exports = function(req,res) {
+
+/*module.exports = (req,res) => {
     console.log('test 1 ')
     const formUpdate = req.body.formButton;
    // var updateForm = req.getElementById('updateForm');
@@ -36,9 +36,9 @@ module.exports = function(req,res) {
             body: new FormData(formUpdate)
         }).then(response => response.json())
             .then(json => console.log(json))
-    };
-}
-
+    }
+};
+*/
 
 
 

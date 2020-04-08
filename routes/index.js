@@ -22,6 +22,7 @@ const productPOST = require('../controller/productPOST');
 const lineItemSTORE = require('../controller/lineItemSTORE');
 const lineItemGET = require('../controller/lineItemGET');
 
+
 /* GET home page. */
 router.get('/', homeController)
 
@@ -43,7 +44,7 @@ router.post('/users/registerLinestander', storeLinestanderController)
 //admin routers
 //router.get('/get-data', getDataAdminController,)
 
-router.put('/update/:id',updateDataAdminController)
+//router.put('/update/:id',updateDataAdminController)
 
 router.delete('/delete', deleteAdminController)
 
@@ -72,8 +73,5 @@ router.get('/lineItems',lineItemGET);
 router.post('/order/new',orderSTORE);
 
 router.get('/order',orderGET);
-
-
-
 
 module.exports = router;
