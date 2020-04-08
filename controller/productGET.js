@@ -9,5 +9,3 @@ module.exports = async (req,res)=> {
         products
     });
 };
-
-

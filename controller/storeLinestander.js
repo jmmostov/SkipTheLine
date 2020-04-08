@@ -7,6 +7,11 @@ module.exports = (req,res)=>{
         username: req.body.username,
         password: req.body.password,
         userType: "linestander",
+        lineStander: {
+            fullName: req.body.fullName,
+            email: req.body.email,
+            phoneNumber: req.body.phoneNumber
+        }
     }, (error,user)=>{
         if(error) {
             console.log(error, 'bruger blev ikke registeret')

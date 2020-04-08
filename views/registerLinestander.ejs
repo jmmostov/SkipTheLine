@@ -5,6 +5,7 @@
 
 <body>
 <%- include('layouts/navbar.ejs');-%>
+<%- include('layouts/scripts');-%>
 <h1>
     Admin can register a linestander and update/delete linestander
 </h1>
@@ -15,14 +16,35 @@
         <h3> REGISTER new linestander</h3>
         <div class="control-group">
             <div class="form-group floating-label-form-group controls">
-                <label for="Username"><b>linestander name</b></label><br>
+                <label for="fullname"><b>Linestander full name</b></label><br>
+                <input type="text" placeholder="Full name" id="fullName" name="fullName">
+            </div>
+        </div>
+        <br>
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <label for="email"><b>Email</b></label><br>
+                <input type="text" placeholder="Email" id="email" name="email">
+            </div>
+        </div>
+        <br>
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <label for="phoneNumber"><b>Phone number</b></label><br>
+                <input type="text" placeholder="Phone number" id="phoneNumber" name="phoneNumber">
+            </div>
+        </div>
+        <br>
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <label for="Username"><b>Linestander name</b></label><br>
                 <input type="text" placeholder="Username" id="username" name="username">
             </div>
         </div>
         <br>
         <div class="control-group">
             <div class="form-group floating-label-form-group control">
-                <label for="psw"><b>linestander password</b></label><br>
+                <label for="psw"><b>Linestander password</b></label><br>
                 <input type="password" placeholder="Enter Password" id="password" name="password">
             </div>
         </div>
@@ -41,7 +63,14 @@
            <hr>
            <div> <b>Username:</b> <%= users[i].username %> </div>
            <br>
+           <div> <b>Full name:</b> <%= users[i].lineStander.fullName %> </div>
+           <br>
+           <div> <b>Email:</b> <%= users[i].lineStander.email %> </div>
+           <br>
+           <div> <b>phoneNumber:</b> <%= users[i].lineStander.phoneNumber %> </div>
+           <br>
            <div> <b>ID:</b>  <%= users[i]._id %></div>
+
        </article>
         <% } %>
     </div>
@@ -49,7 +78,7 @@
 
 <section class="update">
     <h3>UPDATE data</h3>
-    <form id="updateForm" name="updateForm" action="/update/:id" enctype="application/x-www-form-urlencoded">
+    <form id="updateForm" name="updateForm" enctype="application/x-www-form-urlencoded">
         <div class="input">
             <label for="id"> ID </label>
             <input type="text" id="id" name="id">
@@ -57,10 +86,10 @@
         <br>
         <div class="input">
             <label for="username"> Username </label>
-            <input type="text" id="updateUsername" name="updateUsername">
+            <input type="text" id="username" name="username">
         </div>
         <br>
-        <button type="submit"> Update</button>
+        <button type="submit" id="formButton" name="formButton" formmethod="get" onclick="updateUser()">Update</button>
     </form>
 </section>
 
@@ -93,12 +122,12 @@
 
 <section class="delete">
     <h3>DELETE</h3>
-    <form action="/delete/:id" method ="POST" enctype="application/x-www-form-urlencoded">
+    <form action="/delete" method ="POST" enctype="application/x-www-form-urlencoded">
         <div class="control-group">
             <div class="form-group floating-label-form-group controls">
                 <div class="input">
                     <label>ID</label>
-                    <input type="text" class="form-control" placeholder="ID" id="deleteId" name="deleteId">
+                    <input type="text" class="form-control" placeholder="ID" id="id" name="id">
                 </div>
             </div>
             <div></div>
@@ -109,7 +138,8 @@
     </form>
 </section>
 
-<%- include('layouts/scripts');-%>
+
 </body>
+
 
 </html>

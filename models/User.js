@@ -15,6 +15,11 @@ const UserSchema = new Schema({
     },
     userType: {
         type: String
+    },
+    lineStander: {
+        fullName: String,
+        email: String,
+        phoneNumber: Number
     }
 });
 
