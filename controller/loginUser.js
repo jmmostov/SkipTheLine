@@ -21,7 +21,7 @@ module.exports = (req,res)=>{
                     res.redirect('/')
                 }
                 else if(same && user.userType == "linestander") {
-                    req.session.userId = user._id
+                    req.session.LSid= user._id
                     res.redirect('/')
                 }
                 else {

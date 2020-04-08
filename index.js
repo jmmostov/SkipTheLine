@@ -43,13 +43,13 @@ app.use("*",(req, res, next)=>{
 
 global.admin = null;
 app.use("*",(req,res,next)=>{
-    admin = req.session.adminCheck
+    admin = req.session.adminCheck;
     next();
 });
 
 global.LSCheck = null;
 app.use("*",(req,res,next)=>{
-    LSCheck = req.session.LSid
+    LSCheck = req.session.LSid;
     next();
 });
 

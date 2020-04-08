@@ -15,6 +15,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/lineItems">Shopping cart</a>
                 </li>
+
                 <% if(admin) { %>
                 <li class="nav-item">
                     <a class="nav-link" href="/registerLinestander">Admin page</a>
@@ -29,17 +30,19 @@
                     <a class="nav-link" href="/register">New User</a>
                 </li>
                 <% } %>
+
                 <% if(loggedIn) { %>
                     <li class="nav-item">
                         <a class="nav-link" href="/logout">Log out</a>
                     </li>
                 <% } %>
+
                 <% if(LSCheck) { %>
                     <li class="nav-item">
-                        <a class="nav-link" href="/logout">Log out</a>
+                        <a class="nav-link" href="/lineStander">LineStander</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/LineStander">LineStander</a>
+                        <a class="nav-link" href="/logout">Log out</a>
                     </li>
                 <% } %>
             </ul>
