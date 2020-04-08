@@ -46,6 +46,12 @@ app.use("*",(req,res,next)=>{
     next();
 });
 
+global.LSCheck = null;
+app.use("*",(req,res,next)=>{
+    LSCheck = req.session.LSid
+    next();
+});
+
 
 /*
 // Lortet virker ikke... Det skulle ellers forestille at være måden at åbne porten via heroku...

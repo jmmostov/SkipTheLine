@@ -13,6 +13,8 @@ const logoutController = require('../controller/logoutController')
 const deleteAdminController = require('../controller/deleteDataAdmin')
 const orderGET = require('../controller/orderGET');
 const orderSTORE = require('../controller/orderSTORE');
+const lineStanderGET = require('../controller/lineStanderGET');
+
 
 // PRODUCTS:
 const productGET = require('../controller/productGET');
@@ -72,6 +74,12 @@ router.get('/lineItems',lineItemGET);
 router.post('/order/new',orderSTORE);
 
 router.get('/order',orderGET);
+
+
+
+// LINESTANDER:
+
+router.get('/lineStander', lineStanderGET);
 
 
 
