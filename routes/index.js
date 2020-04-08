@@ -44,6 +44,7 @@ router.post('/users/registerLinestander', storeLinestanderController)
 //router.get('/get-data', getDataAdminController,)
 
 router.put('/update/:id',updateDataAdminController)
+
 router.delete('/delete', deleteAdminController)
 
 // PRODUCTS:

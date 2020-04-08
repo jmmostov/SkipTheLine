@@ -49,7 +49,7 @@
 
 <section class="update">
     <h3>UPDATE data</h3>
-    <form action="/update/:id" method="put" enctype="application/x-www-form-urlencoded">
+    <form id="updateForm" name="updateForm" action="/update/:id" enctype="application/x-www-form-urlencoded">
         <div class="input">
             <label for="id"> ID </label>
             <input type="text" id="id" name="id">
@@ -60,7 +60,7 @@
             <input type="text" id="username" name="username">
         </div>
         <br>
-        <button type="submit"> Update</button>
+        <button type="submit" id="formButton" name="formButton" formmethod="get"> Update</button>
     </form>
 </section>
 
