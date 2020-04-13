@@ -8,17 +8,16 @@
 <section class="get">
     <h2> Orders available for pick-up</h2>
     <div>
-        <% for(var i = 0; i < order.length; i++) { %>
+        <% for(var i = 0; i < availableOrders.length; i++) { %>
             <article class="data">
-                <div> <h3>Ordered by:</h3> <%= order[i].user %> </div>
+                <div> <h3>Ordered by:</h3> <%= availableOrders[i].orderedBy %> </div>
                 <br>
-                <div> <h3>Delivery Location:</h3> <%= order[i].deliveryLocation %> </div>
+                <div> <h3>Delivery Location:</h3> <%= availableOrders[i].deliveryLocation %> </div>
                 <br>
                 <% let arr = [];
-                for (let id in order[i].lineItem.items) {
-                        arr.push(order[i].lineItem.items[id]);
+                for (let id in availableOrders[i].lineItem.items) {
+                        arr.push(availableOrders[i].lineItem.items[id]);
                     } %>
-
                 <div>
                     <h3>Order:</h3>
                 <% for(var u = 0; u < arr.length; u++) { %>
@@ -34,6 +33,69 @@
             <% } %>
             <button type="button">Take care of this delivery</button>
         <br>
+            <br>
+        <% } %>
+    </div>
+</section>
+
+<section class="put">
+    <h2> Your picked-up orders:</h2>
+    <div>
+        <% for(var i1 = 0; i1 < pickedUpOrders.length; i1++) { %>
+            <article class="data">
+                <div> <h3>Ordered by:</h3> <%= pickedUpOrders[i1].orderedBy %> </div>
+                <br>
+                <div> <h3>Delivery Location:</h3> <%= pickedUpOrders[i1].deliveryLocation %> </div>
+                <br>
+                <% let arr1 = [];
+                    for (let id in pickedUpOrders[i1].lineItem.items) {
+                        arr1.push(pickedUpOrders[i1].lineItem.items[id]);
+                    } %>
+                <div>
+                    <h3>Order:</h3>
+                    <% for(var u1 = 0; u1 < arr1.length; u1++) { %>
+                        <br>
+                        <div> <b>Product:</b> <%= arr1[u1].product.productName %> <br>
+                            <b>Quantity:</b> <%= arr1[u1].qty %></div>
+                        <br>
+                </div>
+
+
+
+            </article>
+            <% } %>
+            <button type="button">Confirm completed delivery</button>
+            <br>
+            <br>
+        <% } %>
+    </div>
+</section>
+
+<section class="getDelivered">
+    <h2> Your Delivered orders:</h2>
+    <div>
+        <% for(var i2 = 0; i2 < deliveredOrders.length; i2++) { %>
+            <article class="data">
+                <div> <h3>Ordered by:</h3> <%= deliveredOrders[i2].orderedBy %> </div>
+                <br>
+                <div> <h3>Delivery Location:</h3> <%= deliveredOrders[i2].deliveryLocation %> </div>
+                <br>
+                <% let arr2 = [];
+                    for (let id in deliveredOrders[i2].lineItem.items) {
+                        arr2.push(deliveredOrders[i2].lineItem.items[id]);
+                    } %>
+                <div>
+                    <h3>Order:</h3>
+                    <% for(var u2 = 0; u2 < arr2.length; u2++) { %>
+                        <br>
+                        <div> <b>Product:</b> <%= arr2[u2].product.productName %> <br>
+                            <b>Quantity:</b> <%= arr2[u2].qty %></div>
+                        <br>
+                </div>
+
+            </article>
+            <% } %>
+            <br>
             <br>
         <% } %>
     </div>

@@ -22,7 +22,7 @@ const orderSchema = new Schema({
     },// kommentar til hvor man er på RF.
     lineItem: {
         //ref: 'LineItem'
-    }, // Ret til, når LineItem er klar
+    },
     billingAddress: {
         // Ret til, når User er klar
         streetName: {
