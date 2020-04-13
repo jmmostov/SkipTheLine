@@ -14,11 +14,33 @@
             <% for(var i = 0; i < order.length; i++) { %>
                 <div>
                     <h3>
-
-                       Your delivery location: <%= " " + order[i].deliveryLocation%>
+                        Your delivery location: <%= " " + order[i].deliveryLocation%>
                     </h3>
                     <br>
                 </div>
+                <!-- We reuse the code from lineStander.ejs to get to the products, quantity, price and total price
+                of past orders. -->
+                <% let arr = [];
+                for (let id in order[i].lineItem.items) {
+                    arr.push(order[i].lineItem.items[id]);
+                    } %>
+                    <div>
+                        <h3>Order:</h3>
+                        <% for(var u = 0; u < arr.length; u++) { %>
+                            <div> <b>Product:</b> <%= arr[u].product.productName %>
+                                <br>
+                                <b>Price:</b> <%= arr[u].product.price %>
+                                <br>
+                                <b>Quantity:</b> <%= arr[u].qty %>
+                            </div>
+                            <br>
+                        <% } %>
+                        <div>
+                            <b>Total price:</b> <%= order[i].lineItem.totalPrice %>
+                        </div>
+                    </div>
+                <br>
+                <br>
                 <div>
                     <h3>
                          Pick-up status:
