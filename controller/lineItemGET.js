@@ -9,8 +9,8 @@ module.exports = (req,res)=> {
 
 
     // Now we respond with the page creating all our products from our database.
-    res.render('lineItems',{
-        products: lineItems.gennerateArray(),
-        totalPrice: lineItems.totalPrice
-    });
+        res.render('lineItems',{
+            products: lineItems.gennerateArray(),
+            totalPrice: lineItems.totalPrice
+        });
 };
