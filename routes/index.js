@@ -13,6 +13,7 @@ const logoutController = require('../controller/logoutController')
 const deleteAdminController = require('../controller/deleteDataAdmin')
 const orderGET = require('../controller/orderGET');
 const orderSTORE = require('../controller/orderSTORE');
+const orderHistory = require('../controller/orderHistory');
 const lineStanderGET = require('../controller/lineStanderGET');
 
 
@@ -70,10 +71,14 @@ router.get('/lineItems',lineItemGET);
 
 
 // ORDER:
+// The page where you type your billing address and the delivery location:
+router.get('/order',orderGET);
 
+// The button that posts your order in the database:
 router.post('/order/new',orderSTORE);
 
-router.get('/order',orderGET);
+// The users order history:
+router.get('/order/:id', orderHistory);
 
 
 

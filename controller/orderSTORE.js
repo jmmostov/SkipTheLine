@@ -1,5 +1,6 @@
 const Order = require('../models/Order');
 
+
 module.exports = (req,res)=>{
     Order.create({
         orderedBy: req.session.userId,
@@ -18,8 +19,8 @@ module.exports = (req,res)=>{
             return res.redirect('/lineItems')
         }
         else {
-            res.redirect('/');
-            console.log(Order)
+            return res.redirect('/order/' + Order.orderedBy);
+
         }
 
     })

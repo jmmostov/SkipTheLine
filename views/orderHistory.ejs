@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<%- include('layouts/header.ejs');-%>
+
+<body>
+<%- include('layouts/navbar.ejs');-%>
+
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div>
+            <% for(var i = 0; i < order.length; i++) { %>
+                <div>
+                    <h3>
+
+                       Your delivery location: <%= " " + order[i].deliveryLocation%>
+                    </h3>
+                    <br>
+                </div>
+                <div>
+                    <h3>
+                         Pick-up status:
+                    </h3>
+                        <% if(order[i].pickedUp == true) { %> Your order has been accepted by a lineStander. <% } %>
+                        <% if(order[i].pickedUp == false) { %> Your order is waiting for a lineStander to pick it up. <% } %> </h3>
+                </div>
+                    <br>
+                <div>
+                    <h3>
+                        Delivery status:
+                    </h3>
+                        <% if(order[i].delivered == true) { %> Your order has been delivered! <% } %>
+                        <% if(order[i].delivered == false) { %> Your order is heading your way! <% } %>
+                </div>
+                    <br>
+                <div>
+                    <h3>
+                        Billing Address:
+                    </h3>
+                    <br>
+                        <%= order[i].billingAddress.streetName + " " + order[i].billingAddress.streetNr + ", " +
+                        order[i].billingAddress.zipCode + " " + order[i].billingAddress.city + ", " + order[i].billingAddress.country%>
+                    <br>
+                    <br>
+                    <hr>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+
+<%- include('layouts/scripts');-%>
+</body>
+
+</html>
