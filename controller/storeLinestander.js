@@ -14,6 +14,8 @@ module.exports = (req,res)=>{
         }
     }, (error,user)=>{
         if(error) {
+        //    const validationErrorsLinestander = Object.keys(error.errors).map(key => error.errors[key].message)
+          //  req.session.validationErrors = validationErrorsLinestander
             console.log(error, 'bruger blev ikke registeret')
             return res.redirect('/registerLinestander')
         }

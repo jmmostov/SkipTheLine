@@ -23,7 +23,6 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
 
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
@@ -52,7 +51,6 @@ app.use("*",(req,res,next)=>{
     LSCheck = req.session.LSid;
     next();
 });
-
 
 /*
 // Lortet virker ikke... Det skulle ellers forestille at være måden at åbne porten via heroku...

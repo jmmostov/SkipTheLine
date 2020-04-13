@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 
 const orderSchema = new Schema({
-    user: {
+    orderedBy: {
         type: mongoose.Schema.Types.ObjectID,
         ref: 'User'
     },

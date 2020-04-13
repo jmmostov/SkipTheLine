@@ -9,7 +9,10 @@ module.exports = (req,res)=>{
         userType: "customer",
     }, (error,User)=>{
         if(error) {
-            console.log(error)
+            const validationErrors = Object.keys(error.errors).map(key => error.errors[key].message)
+            req.session.validationErrors = validationErrors
+            //req.flash('validationErrors',validationErrors)
+            //console.log(error)
             return res.redirect('/register')
         }
         else {

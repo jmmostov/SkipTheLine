@@ -2,7 +2,7 @@ const Order = require('../models/Order');
 
 module.exports = (req,res)=>{
     Order.create({
-        user: req.session.userId,
+        orderedBy: req.session.userId,
         deliveryLocation: req.body.deliveryLocation,
         lineItem: req.session.lineItems,
         billingAddress:{
