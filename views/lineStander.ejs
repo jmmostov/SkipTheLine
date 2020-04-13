@@ -6,26 +6,35 @@
 <%- include('layouts/navbar.ejs');-%>
 
 <section class="get">
-    <h3> Orders available for pick-up</h3>
+    <h2> Orders available for pick-up</h2>
     <div>
         <% for(var i = 0; i < order.length; i++) { %>
             <article class="data">
-                <hr>
+                <div> <h3>Ordered by:</h3> <%= order[i].user %> </div>
+                <br>
                 <div> <h3>Delivery Location:</h3> <%= order[i].deliveryLocation %> </div>
                 <br>
                 <% let arr = [];
                 for (let id in order[i].lineItem.items) {
                         arr.push(order[i].lineItem.items[id]);
-                    }
-                for(var u = 0; u < arr.length; u++) { %>
-                    <hr>
-                    <div> <b>Product:</b> <%= arr[u].product.productName %> <br>
-                    <b>Quantity:</b> <%= arr[u].qty %></div>
-                    <br>
+                    } %>
+
+                <div>
+                    <h3>Order:</h3>
+                <% for(var u = 0; u < arr.length; u++) { %>
+                        <br>
+                        <div> <b>Product:</b> <%= arr[u].product.productName %> <br>
+                            <b>Quantity:</b> <%= arr[u].qty %></div>
+                        <br>
+                    </div>
+
+
 
             </article>
             <% } %>
             <button type="button">Take care of this delivery</button>
+        <br>
+            <br>
         <% } %>
     </div>
 </section>
