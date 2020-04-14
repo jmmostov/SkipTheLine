@@ -1,15 +1,34 @@
+console.log("test");
 
-function updateUser(req, res) {
+const formElem = document.getElementById('formButton').innerHTML;
+formElem.addEventListener('submit', _=> {
+    const options = {
+        method: 'PUT',
+        body: new FormData(formElem)
+    }
+    return fetch('/update', options)
+        .then(res => res.json())
+        .then(res => console.log(res))
+})
+
+
+/*function updateUser() {
     console.log('hej')
-    var formUpdate = req.getElementById("updateForm")
+    const formUpdate = document.getElementById("updateForm")
+
+
+
+
     console.log('test 2')
     formUpdate.onsubmit = (event) => {
         event.preventDefault();
 
-        fetch('registerLinestander', {
+        fetch('/registerLinestander', {
             method: 'PUT',
             body: new FormData(formUpdate)
-        }).then(response => response.json())
+        }).then(res => res.json())
             .then(json => console.log(json))
     }
 };
+
+ */
