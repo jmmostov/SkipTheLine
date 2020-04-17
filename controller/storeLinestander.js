@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = (req,res)=>{
     User.create({
-        username: req.body.username,
+        username: req.body.username2,
         password: req.body.password,
         userType: "linestander",
         lineStander: {

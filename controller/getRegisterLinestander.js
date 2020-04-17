@@ -8,9 +8,12 @@ module.exports = async (req,res)=>{
         if(err) {
             console.log(err)
         }
-        res.render('registerLinestander',{
-            users: user
-        });
+        if(admin){
+            res.render('registerLinestander',{
+                users: user,
+            });
+        }
+        else return res.redirect('/error');
     });
 };
 
