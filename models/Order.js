@@ -12,6 +12,10 @@ const orderSchema = new Schema({
         type: Boolean,
         default: false
     },
+    pickedUpBy:{
+        type: mongoose.Schema.Types.ObjectID,
+        ref: 'User',
+    },
     delivered: { 
         type: Boolean, 
         default: false
