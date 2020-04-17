@@ -1,7 +1,7 @@
 const formElem = document.getElementById('updateForm');
 
 
-function test(){
+function updateUser(){
 
 
 
@@ -16,7 +16,10 @@ function test(){
                 },
                 body: JSON.stringify({
                     "id":document.getElementById("id").value,
-                    "username":document.getElementById("username").value
+                    "username":document.getElementById("updateUsername").value,
+                    "fullName":document.getElementById("updateName").value,
+                    "email":document.getElementById("updateEmail").value,
+                    "phoneNumber":document.getElementById("updateNumber").value
                 })
             })
                 .then(json => {
@@ -24,7 +27,7 @@ function test(){
                 })
         };
 }
-test();
+updateUser();
 
 
 

@@ -2,11 +2,12 @@
 var User = require('../models/User');
 
 module.exports = async function (req,res) {
-    await User.findByIdAndDelete({"_id": req.body.deleteId}, (err,user)=> {
+    await User.findByIdAndDelete({"_id": req.params.id}, (err,user)=> {
         if(err) {
             console.log(err);
         }
-        return res.redirect('/registerLinestander')
+        res.end();
+       // return res.redirect('/registerLinestander')
     });
 };
 

@@ -49,7 +49,7 @@ router.post('/users/registerLinestander', storeLinestanderController)
 
 router.put('/update',updateDataAdminController)
 
-router.delete('/delete', deleteAdminController)
+router.delete('/delete/:id', deleteAdminController)
 
 // PRODUCTS:
 // We try to show all products from the database.

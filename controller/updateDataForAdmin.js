@@ -1,10 +1,7 @@
 //update username via objectId that has been created by mongoDB
 var User = require('../models/User');
 
-
 /*
-
-
 module.exports = function (req,res) {
     User.findByIdAndUpdate({_id: req.params.id}, req.body).then(function (user) {
         User.findOne({_id:req.params.id}).then(function (user) {
@@ -12,12 +9,11 @@ module.exports = function (req,res) {
         })
     });
 }
-
-
  */
 
 module.exports = function(req,res) {
     console.log(req.body)
+
     User.findOneAndUpdate(
         // Vi kan ikke komme ind og få fat på værdierne i vores ejs ved at bruge "req.body..."
         // https://mongoosejs.com/docs/api.html#model_Model.findByIdAndUpdate
@@ -26,7 +22,12 @@ module.exports = function(req,res) {
         },
         {
             $set: {
-                username: req.body.username
+                username: req.body.username,
+                lineStander: {
+                    fullName: req.body.fullName,
+                    email: req.body.email,
+                    phoneNumber: req.body.phoneNumber,
+                }
             }
         },
         {
@@ -34,10 +35,10 @@ module.exports = function(req,res) {
         }
     )
         .then(result => {
-            console.log(result + "Hej Stine, er d")
+            //console.log(result + "Hej Stine, er d")
             res.end();
         })
-        .catch(error => console.error(error))
+        .catch(error => console.error(error + "Stine er sej"))
 }
 
 /*
