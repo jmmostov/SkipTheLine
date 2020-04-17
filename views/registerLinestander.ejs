@@ -6,6 +6,8 @@
 <body>
 <%- include('layouts/navbar.ejs');-%>
 <%- include('layouts/scripts');-%>
+
+
 <h1>
     Admin can register a linestander and update/delete linestander
 </h1>
@@ -36,7 +38,7 @@
         <div class="control-group">
             <div class="form-group floating-label-form-group controls">
                 <label for="Username"><b>Linestander name</b></label><br>
-                <input type="text" placeholder="Username" id="username" name="username">
+                <input type="text" placeholder="Username" id="username2" name="username2">
             </div>
         </div>
         <br>
@@ -74,9 +76,11 @@
     </div>
 </section>
 
+
+
 <section class="update">
     <h3>UPDATE data</h3>
-    <form id="updateForm" name="updateForm" enctype="application/x-www-form-urlencoded">
+    <form id="updateForm" name="updateForm" >
         <div class="input">
             <label for="id"> ID </label>
             <input type="text" id="id" name="id">
@@ -87,7 +91,7 @@
             <input type="text" id="username" name="username">
         </div>
         <br>
-        <button type="submit" id="formButton" name="formButton" formmethod="get" onclick="updateUser()">Update</button>
+        <button type="submit" id="formButton" name="formButton" >Update</button>
     </form>
 </section>
 
@@ -125,7 +129,7 @@
             <div class="form-group floating-label-form-group controls">
                 <div class="input">
                     <label>ID</label>
-                    <input type="text" class="form-control" placeholder="ID" id="id" name="id">
+                    <input type="text" class="form-control" placeholder="ID" id="deleteId" name="deleteId">
                 </div>
             </div>
             <div></div>
@@ -135,6 +139,8 @@
 
     </form>
 </section>
+
+<script src="js/updateUser.js"></script>
 
 
 </body>
