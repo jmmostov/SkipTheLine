@@ -22,7 +22,7 @@
                 </li>
                 <% } %>
 
-                <% if(!loggedIn) { %>
+                <% if(!loggedIn && !LSCheck) { %>
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Login</a>
                     </li>

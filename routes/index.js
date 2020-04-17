@@ -15,6 +15,7 @@ const orderGET = require('../controller/orderGET');
 const orderSTORE = require('../controller/orderSTORE');
 const orderHistory = require('../controller/orderHistory');
 const lineStanderGET = require('../controller/lineStanderGET');
+const errorPage = require('../controller/errorPage');
 
 
 // PRODUCTS:
@@ -46,7 +47,7 @@ router.post('/users/registerLinestander', storeLinestanderController)
 //admin routers
 //router.get('/get-data', getDataAdminController,)
 
-//router.put('/update/:id',updateDataAdminController)
+router.put('/update',updateDataAdminController)
 
 router.delete('/delete', deleteAdminController)
 
@@ -83,8 +84,11 @@ router.get('/order/:id', orderHistory);
 
 
 // LINESTANDER:
-
 router.get('/lineStander', lineStanderGET);
+
+
+// ERROR PAGE:
+router.get('/error', errorPage);
 
 
 
