@@ -73,7 +73,7 @@ button {
 nav {
     width: 100%;
     height: 60px;
-    background-color: cornflowerblue;
+    background-color: darkorange;
     opacity: .9;
     line-height: 60px;
     text-align: center;
@@ -81,7 +81,7 @@ nav {
 }
 
 button:hover {
-    background: #bdc3c7;
+    background: black;
 }
 
 ul {
@@ -97,12 +97,11 @@ ul li {
 }
 ul li a {
     text-decoration: none;
-    color: burlywood;
+    color: black;
     display: block;
 }
 
 ul li a:hover {
-    color: blue;
+    color: orangered;
     font-weight: bold;
 }
-
