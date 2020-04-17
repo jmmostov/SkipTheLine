@@ -1,7 +1,36 @@
-console.log("test");
+const formElem = document.getElementById('updateForm');
 
-const formElem = document.getElementById('formButton').innerHTML;
-formElem.addEventListener('submit', _=> {
+
+function test(){
+
+
+
+    formElem.onsubmit = (event) =>{
+        event.preventDefault();
+
+        fetch('/update', {
+                method: 'PUT',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "id":document.getElementById("id").value,
+                    "username":document.getElementById("username").value
+                })
+            })
+                .then(json => {
+                    location.reload();
+                })
+        };
+}
+test();
+
+
+
+
+
+/*formElem.addEventListener('submit', _=> {
     const options = {
         method: 'PUT',
         body: new FormData(formElem)
@@ -11,6 +40,8 @@ formElem.addEventListener('submit', _=> {
         .then(res => console.log(res))
 })
 
+
+ */
 
 /*function updateUser() {
     console.log('hej')

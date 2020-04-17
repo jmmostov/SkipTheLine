@@ -3,6 +3,8 @@ var User = require('../models/User');
 
 
 /*
+
+
 module.exports = function (req,res) {
     User.findByIdAndUpdate({_id: req.params.id}, req.body).then(function (user) {
         User.findOne({_id:req.params.id}).then(function (user) {
@@ -10,37 +12,47 @@ module.exports = function (req,res) {
         })
     });
 }
-*/
+
+
+ */
 
 module.exports = function(req,res) {
+    console.log(req.body)
     User.findOneAndUpdate(
-        {_id: req.body.id},
+        // Vi kan ikke komme ind og få fat på værdierne i vores ejs ved at bruge "req.body..."
+        // https://mongoosejs.com/docs/api.html#model_Model.findByIdAndUpdate
+        {
+            _id: req.body.id
+        },
         {
             $set: {
                 username: req.body.username
             }
         },
         {
-            upsert: true
+            new: true
         }
     )
         .then(result => {
-            console.log(result)
+            console.log(result + "Hej Stine, er d")
+            res.end();
         })
         .catch(error => console.error(error))
-
 }
 
-    /* await User.findOneAndUpdate({"_id": req.body.id},{$set:{username:req.body.username}},{new: true}, function(err,user){
+/*
+     await User.findOneAndUpdate({_id: req.body.id},{$set:{username:req.body.username}},{new: true}, function(err,user){
         if(err){
             console.log('errormessage ' + err);
         }
         //res.send(user);
-        return res.redirect(303,'/registerLinestander')
+        return res.redirect(303, '/registerLinestander')
     });
 };
 
-     */
+ */
+
+
 
 
 
