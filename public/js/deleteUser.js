@@ -6,7 +6,7 @@ function deleteUser(){
     formElem5.onsubmit = (event) =>{
         event.preventDefault();
 
-        fetch('/delete/' + document.getElementById("deleteUserId").value, {
+        fetch('/delete/user/' + document.getElementById("deleteUserId").value, {
             method: 'DELETE',
         })
 

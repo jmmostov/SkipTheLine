@@ -56,7 +56,7 @@
 </form>
 
 <section class="get">
-    <h3> GET data</h3>
+    <h3> GET data for LineStander</h3>
     <div>
         <% for(var i = 0; i < users.length; i++) { %>
        <article class="data">
@@ -75,6 +75,22 @@
         <% } %>
     </div>
 </section>
+<section class="getProducts">
+    <h3> GET data for Products</h3>
+    <div>
+        <% for(var i = 0; i < products.length; i++) { %>
+            <article class="data">
+                <hr>
+                <div> <b>Product Name:</b> <%= products[i].productName %> </div>
+                <br>
+                <div> <b>Price:</b>  <%= products[i].price %></div>
+                <br>
+                <div> <b>ID:</b>  <%= products[i]._id %></div>
+
+            </article>
+        <% } %>
+    </div>
+</section>
 
 
 
@@ -85,18 +101,22 @@
             <label for="id"> ID </label>
             <input type="text" id="id" name="id" placeholder="ID">
         </div>
+        <br>
         <div class="input">
             <label for="username"> Username </label>
-            <input type="text" id="updateUsername" placeholder="Username">
+            <input type="text" id="updateLSUsername" placeholder="Username">
         </div>
+        <br>
         <div class="input">
             <label for="fullName"> Full name </label>
             <input type="text" id="updateName" placeholder="Full Name">
         </div>
+        <br>
         <div class="input">
             <label for="email"> Email </label>
             <input type="text" id="updateEmail" placeholder="Email">
         </div>
+        <br>
         <div class="input">
             <label for="phoneNumber"> Phone Number </label>
             <input type="text" id="updateNumber" placeholder="Phone Number">
@@ -128,7 +148,7 @@
         </div>
         <br>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary" id="addProduct">Add order</button>
+            <button type="submit" class="btn btn-primary" id="addProduct">Add product</button>
         </div>
     </form>
 </section>
@@ -143,15 +163,27 @@
                     <input type="text" placeholder="ID" id="deleteId" name="deleteId">
                 </div>
             </div>
-            <br>
         </div>
-        <button type="submit"> Delete</button>
-
+        <button type="submit"> Delete LineStander</button>
+        <br>
+        <br>
+    </form>
+        <form id="deleteProducts">
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <div class="input">
+                    <label>DELETE PRODUCT</label>
+                    <input type="text" placeholder="Product ID" id="deleteProduct" name="deleteProduct">
+                </div>
+            </div>
+        </div>
+        <button type="submit"> Delete Product</button>
     </form>
 </section>
 
-<script src="js/updateUser.js"></script>
+<script src="js/updateLineStander.js"></script>
 <script src="js/deleteLineStander.js"></script>
+<script src="js/deleteProduct.js"></script>
 
 </body>
 

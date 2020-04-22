@@ -17,6 +17,7 @@ const orderHistory = require('../controller/orderHistory');
 const lineStanderGET = require('../controller/lineStanderGET');
 const errorPage = require('../controller/errorPage');
 const adminUserController = require('../controller/getAdminUser');
+const deleteProductsController = require('../controller/deleteProducts')
 
 
 // PRODUCTS:
@@ -57,7 +58,7 @@ router.get('/adminUser', adminUserController)
 
 router.put('/update',updateDataAdminController)
 
-router.delete('/delete/:id', deleteAdminController)
+router.delete('/delete/user/:id', deleteAdminController)
 
 // PRODUCTS:
 // We try to show all products from the database.
@@ -65,6 +66,9 @@ router.get('/products',productGET);
 
 // We try to post the newly added product to the database.
 router.post('/product/new',productPOST);
+
+//delete products:
+router.delete('/delete/product/:id', deleteProductsController)
 
 // LINEITEM:
 // Now, we'll try to make a page for the individual product.

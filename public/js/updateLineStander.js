@@ -1,29 +1,36 @@
 const formElem = document.getElementById('updateForm');
 
 
-function updateUser(){
+function updateLineStander(){
+
+
     //
 
     formElem.onsubmit = (event) =>{
         event.preventDefault();
 
         fetch('/update', {
-            method: 'PUT',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "id":document.getElementById("id").value,
-                "username":document.getElementById("updateUsername").value,
+                method: 'PUT',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "id":document.getElementById("id").value,
+                    "username":document.getElementById("updateLSUsername").value,
+                    "fullName":document.getElementById("updateName").value,
+                    "email":document.getElementById("updateEmail").value,
+                    "phoneNumber":document.getElementById("updateNumber").value
+                })
             })
-        })
-            .then(json => {
-                location.reload();
-            })
-    };
+                .then(json => {
+                    location.reload();
+                })
+        };
 }
-updateUser();
+updateLineStander();
+
+
 
 
 
