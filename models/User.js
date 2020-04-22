@@ -7,26 +7,40 @@ const bcrypt = require('bcrypt')
 
 //A schema represents what a collection looks like - specifying each attribute in the schema.
 const UserSchema = new Schema({
-    username: {
-        type: String,
-        unique: true,
-        required: [true, 'Please provide a username'],
-        uniqueCaseInsensitive: true
-    },
-    password: {
-        type: String,
-        required: [true, 'Please provide a password'],
-        minlengthValidator: 8
-    },
+
+    // TODO: skal laves om til enum
     userType: {
         type: String
     },
+    home_address_id: {
+        type: mongoose.Schema.Types.ObjectID,
+        ref: 'Address'
+    },
+    billing_address_id: {
+        type: mongoose.Schema.Types.ObjectID,
+        ref: 'Address'
+    },
+        username: {
+            type: String,
+            unique: true,
+            required: [true, 'Please provide a username'],
+            uniqueCaseInsensitive: true
+        },
+        password: {
+            type: String,
+            required: [true, 'Please provide a password']
+        },
+        full_name: {
+            first_name: String,
+            last_name: String
+        },
+        email: {
+            type: String,
+            unique: true,
+            required: true
+        },
+        phone_number: Number
 
-    lineStander: {
-        fullName: String,
-        email: String,
-        phoneNumber: Number
-    }
 });
 
 UserSchema.pre('save',function(next) {
