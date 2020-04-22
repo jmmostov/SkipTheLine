@@ -29,6 +29,7 @@ const lineItemGET = require('../controller/lineItemGET');
 
 // LINESTANDER:
 const lineStanderChange = require('../controller/lineStanderChange');
+const lineStanderDelivered = require('../controller/lineStanderDelivered');
 
 
 
@@ -92,8 +93,11 @@ router.get('/order/:id', orderHistory);
 // LINESTANDER:
 router.get('/lineStander', lineStanderGET);
 
-// put shiet
+// Pick up order with put-method
 router.put('/update/LS', lineStanderChange);
+
+//
+router.put('/update/LSdelivery', lineStanderDelivered);
 
 
 // ERROR PAGE:

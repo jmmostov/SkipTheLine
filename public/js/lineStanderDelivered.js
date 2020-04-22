@@ -1,18 +1,18 @@
-const formElem3 = document.getElementById('pickUpButton');
+const formElem4 = document.getElementById('deliveredButton');
 
-function updateLS(){
+function delivered(){
 
-    formElem3.onclick = (event) =>{
+    formElem4.onclick = (event) =>{
         event.preventDefault();
 
-        fetch('/update/LS', {
+        fetch('/update/LSdelivery', {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                "_id":document.getElementById("orderId").innerText
+                "_id":document.getElementById("orderIdAfterPickUp").innerText,
             })
         })
             .then(json => {
@@ -20,7 +20,7 @@ function updateLS(){
             })
     };
 }
-updateLS();
+delivered();
 
 
 
