@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<%- include('layouts/header.ejs');-%>
+
+<body>
+<%- include('layouts/navbar.ejs');-%>
+<%- include('layouts/scripts');-%>
+
+<h1>
+    Admin can delete and update user
+</h1>
+
+<section class="get">
+    <h3> GET data</h3>
+    <div>
+        <% for(var i = 0; i < customer.length; i++) { %>
+            <article class="data">
+                <hr>
+                <div> <b>Username:</b> <%= customer[i].username %> </div>
+                <br>
+                <div> <b>ID:</b> <%= customer[i]._id %></div>
+
+            </article>
+        <% } %>
+    </div>
+</section>
+
+
+<section class="update">
+    <h3>UPDATE data</h3>
+    <form id="updateForm" name="updateForm" >
+        <div class="input">
+            <label for="id"> ID </label>
+            <input type="text" id="id" name="id" placeholder="ID">
+        </div>
+        <div class="input">
+            <label for="username"> Username </label>
+            <input type="text" id="updateUsername" placeholder="Username">
+        </div>
+        <br>
+        <button type="submit" id="formButton" name="formButton" >Update</button>
+    </form>
+</section>
+
+<section class="delete">
+    <h3>DELETE</h3>
+    <form id="deleteUser">
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <div class="input">
+                    <label>ID</label>
+                    <input type="text" placeholder="ID" id="deleteUserId">
+                </div>
+            </div>
+            <br>
+        </div>
+        <button type="submit"> Delete </button>
+
+    </form>
+</section>
+
+<script src="js/updateUser.js"></script>
+<script src="js/deleteUser.js"></script>
+
+</body>
+
+</html>

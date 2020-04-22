@@ -9,7 +9,6 @@ a {
 
 section {
     float: left;
-    background: #bdc3c7;
     padding: 10px;
     margin: 15px;
     width: 285px;
@@ -35,19 +34,27 @@ section h3 {
 }
 
 .get {
-    background: #ecf0f1;
+    background: bisque;
 }
 
 .update {
-    background: #3498db;
+    background: orange;
 }
 
 .new_product {
-    background: lightskyblue;
+    background: darkorange;
 }
 
 .delete {
-    background: lightsteelblue;
+    background: orangered;
+}
+
+.put {
+    background: orange;
+}
+
+.getDelivered {
+    background: darkorange;
 }
 
 .input label {
@@ -81,7 +88,7 @@ nav {
 }
 
 button:hover {
-    background: black;
+    background: orangered;
 }
 
 ul {
