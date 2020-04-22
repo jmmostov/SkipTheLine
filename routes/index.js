@@ -18,6 +18,7 @@ const lineStanderGET = require('../controller/lineStanderGET');
 const errorPage = require('../controller/errorPage');
 
 
+
 // PRODUCTS:
 const productGET = require('../controller/productGET');
 const productPOST = require('../controller/productPOST');
@@ -25,6 +26,11 @@ const productPOST = require('../controller/productPOST');
 // LINEITEM:
 const lineItemSTORE = require('../controller/lineItemSTORE');
 const lineItemGET = require('../controller/lineItemGET');
+
+// LINESTANDER:
+const lineStanderChange = require('../controller/lineStanderChange');
+
+
 
 /* GET home page. */
 router.get('/', homeController)
@@ -49,7 +55,7 @@ router.post('/users/registerLinestander', storeLinestanderController)
 
 router.put('/update',updateDataAdminController)
 
-router.delete('/delete', deleteAdminController)
+router.delete('/delete/:id', deleteAdminController)
 
 // PRODUCTS:
 // We try to show all products from the database.
@@ -85,6 +91,9 @@ router.get('/order/:id', orderHistory);
 
 // LINESTANDER:
 router.get('/lineStander', lineStanderGET);
+
+// put shiet
+router.put('/update/LS', lineStanderChange);
 
 
 // ERROR PAGE:

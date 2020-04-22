@@ -85,10 +85,21 @@
             <label for="id"> ID </label>
             <input type="text" id="id" name="id">
         </div>
-        <br>
         <div class="input">
             <label for="username"> Username </label>
-            <input type="text" id="username" name="username">
+            <input type="text" id="updateUsername">
+        </div>
+        <div class="input">
+            <label for="fullName"> Full name </label>
+            <input type="text" id="updateName">
+        </div>
+        <div class="input">
+            <label for="email"> Email </label>
+            <input type="text" id="updateEmail">
+        </div>
+        <div class="input">
+            <label for="phoneNumber"> Phone Number </label>
+            <input type="text" id="updateNumber">
         </div>
         <br>
         <button type="submit" id="formButton" name="formButton" >Update</button>
@@ -124,15 +135,14 @@
 
 <section class="delete">
     <h3>DELETE</h3>
-    <form action="/delete" method ="POST" enctype="application/x-www-form-urlencoded">
+    <form id="deleteUser">
         <div class="control-group">
             <div class="form-group floating-label-form-group controls">
                 <div class="input">
                     <label>ID</label>
-                    <input type="text" class="form-control" placeholder="ID" id="deleteId" name="deleteId">
+                    <input type="text" placeholder="ID" id="deleteId" name="deleteId">
                 </div>
             </div>
-            <div></div>
             <br>
         </div>
         <button type="submit"> Delete</button>
@@ -141,7 +151,7 @@
 </section>
 
 <script src="js/updateUser.js"></script>
-
+<script src="js/deleteUser.js"></script>
 
 </body>
 

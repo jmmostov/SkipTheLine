@@ -1,5 +1,5 @@
 //update username via objectId that has been created by mongoDB
-var User = require('../models/User');
+const Order = require('../models/Order');
 
 /*
 module.exports = function (req,res) {
@@ -12,22 +12,19 @@ module.exports = function (req,res) {
  */
 
 module.exports = function(req,res) {
-    console.log(req.body)
+    console.log(req.body._id)
+    console.log(LSCheck)
 
-    User.findOneAndUpdate(
+    Order.findOneAndUpdate(
         // Vi kan ikke komme ind og få fat på værdierne i vores ejs ved at bruge "req.body..."
         // https://mongoosejs.com/docs/api.html#model_Model.findByIdAndUpdate
         {
-            _id: req.body.id
+            _id: req.body._id
         },
         {
             $set: {
-                username: req.body.username,
-                lineStander: {
-                    fullName: req.body.fullName,
-                    email: req.body.email,
-                    phoneNumber: req.body.phoneNumber,
-                }
+                pickedUpBy: LSCheck,
+                pickedUp: true
             }
         },
         {

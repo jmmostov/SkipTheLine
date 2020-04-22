@@ -4,7 +4,7 @@ const Order = require('../models/Order.js');
 module.exports = async (req,res)=> {
     // We try to find all products created in the database
     const availableOrders = await Order.find({pickedUp: false });
-    const pickedUpOrders = await Order.find({pickedUp: true, });
+    const pickedUpOrders = await Order.find({pickedUp: true, pickedUpBy: LSCheck});
     const deliveredOrders = await Order.find({delivered: true});
    /*let orderArray = function(){
         let arr = [];
