@@ -1,14 +1,14 @@
-const formElem2 = document.getElementById('deleteUser');
+const formElem5 = document.getElementById('deleteUser');
 
 
 function deleteUser(){
 
-    formElem2.onsubmit = (event) =>{
+    formElem5.onsubmit = (event) =>{
         event.preventDefault();
 
-        fetch('/delete/' + document.getElementById("deleteId").value, {
+        fetch('/delete/' + document.getElementById("deleteUserId").value, {
             method: 'DELETE',
-            })
+        })
 
             .then(json => {
                 location.reload();
