@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<%- include('layouts/header.ejs');-%>
+
+<body>
+<%- include('layouts/navbar.ejs');-%>
+<%- include('layouts/scripts');-%>
+
+<h1>
+    Admin can delete and update products
+</h1>
+
+<section class="getProducts">
+    <h3> GET data for Products</h3>
+    <div>
+        <% for(var i = 0; i < products.length; i++) { %>
+            <article class="data">
+                <hr>
+                <div> <b>Product Name:</b> <%= products[i].productName %> </div>
+                <br>
+                <div> <b>Price:</b>  <%= products[i].price %></div>
+                <br>
+                <div> <b>ID:</b>  <%= products[i]._id %></div>
+
+            </article>
+        <% } %>
+    </div>
+</section>
+
+<section class="update">
+    <h3>UPDATE DATA FOR PRODUCTS</h3>
+    <form id="updateForm" name="updateForm" >
+        <div class="input">
+            <label for="id"> ID </label>
+            <input type="text" id="id" name="id" placeholder="ID">
+        </div>
+        <div class="input">
+            <label for="username"> Username </label>
+            <input type="text" id="updateUsername" placeholder="Username">
+        </div>
+        <br>
+        <button type="submit" id="formButton" name="formButton" >Update</button>
+    </form>
+</section>
+
+<section class="new_product">
+    <h3>ADD A NEW PRODUCT</h3>
+    <form action="/product/new" method ="POST" enctype="application/x-www-form-urlencoded">
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <div class="input">
+                    <label>New product</label>
+                    <input type="text" class="form-control" placeholder="Product name" id="productName" name="productName">
+                </div>
+            </div>
+            <br>
+        </div>
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <div class="input">
+                    <label>Price</label>
+                    <input type="number" class="form-control" placeholder="Product price" id="price" name="price">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" id="addProduct">Add product</button>
+        </div>
+    </form>
+</section>
+<br>
+<br>
+
+<section class="delete">
+    <h3>DELETE</h3>
+    <form id="deleteProducts">
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <div class="input">
+                    <label>Delete product</label>
+                    <input type="text" placeholder="Product ID" id="deleteProduct" name="deleteProduct">
+                </div>
+            </div>
+        </div>
+    <button type="submit"> Delete Product</button>
+    </form>
+</section>
+
+<script src="js/updateUser.js"></script>
+<script src="js/deleteUser.js"></script>
+<script src="js/deleteProduct.js"></script>
+
+</body>
+
+</html>

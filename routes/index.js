@@ -17,7 +17,8 @@ const orderHistory = require('../controller/orderHistory');
 const lineStanderGET = require('../controller/lineStanderGET');
 const errorPage = require('../controller/errorPage');
 const adminUserController = require('../controller/getAdminUser');
-const deleteProductsController = require('../controller/deleteProducts')
+const adminProductsController = require('../controller/adminProducts')
+const adminDeleteProductsController = require('../controller/deleteProducts')
 
 
 // PRODUCTS:
@@ -51,11 +52,13 @@ router.get('/logout', logoutController)
 //router to admin login page
 router.get('/registerLinestander', adminLoginController)
 router.post('/users/registerLinestander', storeLinestanderController)
-router.get('/adminUser', adminUserController)
 
-//admin routers
+
+
+//ADMIN ROUTERS
 //router.get('/get-data', getDataAdminController,)
-
+router.get('/adminUser', adminUserController)
+router.get('/adminProducts', adminProductsController)
 router.put('/update',updateDataAdminController)
 
 router.delete('/delete/user/:id', deleteAdminController)
@@ -68,7 +71,7 @@ router.get('/products',productGET);
 router.post('/product/new',productPOST);
 
 //delete products:
-router.delete('/delete/product/:id', deleteProductsController)
+router.delete('/delete/product/:id', adminDeleteProductsController)
 
 // LINEITEM:
 // Now, we'll try to make a page for the individual product.

@@ -63,11 +63,11 @@
            <hr>
            <div> <b>Username:</b> <%= users[i].username %> </div>
            <br>
-           <div> <b>Full name:</b> <%= users[i].lineStander.fullName %> </div>
+           <div> <b>Full name:</b> <%= users[i].full_Name %> </div>
            <br>
-           <div> <b>Email:</b> <%= users[i].lineStander.email %> </div>
+           <div> <b>Email:</b> <%= users[i].email %> </div>
            <br>
-           <div> <b>phoneNumber:</b> <%= users[i].lineStander.phoneNumber %> </div>
+           <div> <b>phoneNumber:</b> <%= users[i].phone_number %> </div>
            <br>
            <div> <b>ID:</b>  <%= users[i]._id %></div>
 
@@ -75,24 +75,6 @@
         <% } %>
     </div>
 </section>
-<section class="getProducts">
-    <h3> GET data for Products</h3>
-    <div>
-        <% for(var i = 0; i < products.length; i++) { %>
-            <article class="data">
-                <hr>
-                <div> <b>Product Name:</b> <%= products[i].productName %> </div>
-                <br>
-                <div> <b>Price:</b>  <%= products[i].price %></div>
-                <br>
-                <div> <b>ID:</b>  <%= products[i]._id %></div>
-
-            </article>
-        <% } %>
-    </div>
-</section>
-
-
 
 <section class="update">
     <h3>UPDATE data</h3>
@@ -126,33 +108,6 @@
     </form>
 </section>
 
-<section class="new_product">
-    <h3>ADD A NEW PRODUCT</h3>
-    <form action="/product/new" method ="POST" enctype="application/x-www-form-urlencoded">
-        <div class="control-group">
-            <div class="form-group floating-label-form-group controls">
-                <div class="input">
-                    <label>New product</label>
-                    <input type="text" class="form-control" placeholder="Product name" id="productName" name="productName">
-                </div>
-            </div>
-            <br>
-        </div>
-        <div class="control-group">
-            <div class="form-group floating-label-form-group controls">
-                <div class="input">
-                    <label>Price</label>
-                    <input type="number" class="form-control" placeholder="Product price" id="price" name="price">
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary" id="addProduct">Add product</button>
-        </div>
-    </form>
-</section>
-
 <section class="delete">
     <h3>DELETE</h3>
     <form id="deleteLineStander">
@@ -165,25 +120,12 @@
             </div>
         </div>
         <button type="submit"> Delete LineStander</button>
-        <br>
-        <br>
-    </form>
-        <form id="deleteProducts">
-        <div class="control-group">
-            <div class="form-group floating-label-form-group controls">
-                <div class="input">
-                    <label>DELETE PRODUCT</label>
-                    <input type="text" placeholder="Product ID" id="deleteProduct" name="deleteProduct">
-                </div>
-            </div>
-        </div>
-        <button type="submit"> Delete Product</button>
     </form>
 </section>
 
 <script src="js/updateLineStander.js"></script>
 <script src="js/deleteLineStander.js"></script>
-<script src="js/deleteProduct.js"></script>
+
 
 </body>
 
