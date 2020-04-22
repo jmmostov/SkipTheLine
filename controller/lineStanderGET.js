@@ -3,9 +3,9 @@ const Order = require('../models/Order.js');
 
 module.exports = async (req,res)=> {
     // We try to find all products created in the database
-    const availableOrders = await Order.find({pickedUp: false });
-    const pickedUpOrders = await Order.find({pickedUp: true, pickedUpBy: LSCheck});
-    const deliveredOrders = await Order.find({delivered: true});
+    const availableOrders = await Order.find({status: ["pending"] });
+    const pickedUpOrders = await Order.find({status: ["ongoing"], pickedUpBy: LSCheck});
+    const deliveredOrders = await Order.find({status: ["completed"], pickedUpBy: LSCheck});
    /*let orderArray = function(){
         let arr = [];
 

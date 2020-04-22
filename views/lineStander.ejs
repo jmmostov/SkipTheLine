@@ -42,11 +42,13 @@
     </div>
 </section>
 
-<section class="put">
+<section class="get">
     <h2> Your picked-up orders:</h2>
     <div>
         <% for(var i1 = 0; i1 < pickedUpOrders.length; i1++) { %>
             <article class="data">
+                <div> <h3>Order id:</h3> <p id="orderIdAfterPickUp"> <%= pickedUpOrders[i1]._id %> </p> </div>
+                <br>
                 <div> <h3>Ordered by:</h3> <%= pickedUpOrders[i1].orderedBy %> </div>
                 <br>
                 <div> <h3>Picked up by:</h3> <%= pickedUpOrders[i1].pickedUpBy %> </div>
@@ -66,11 +68,9 @@
                         <br>
                 </div>
 
-
-
             </article>
             <% } %>
-            <button type="button">Confirm completed delivery</button>
+            <button type="button" id="deliveredButton">Confirm completed delivery</button>
             <br>
             <br>
         <% } %>
@@ -126,6 +126,7 @@
 </section>
 -->
 <script src="js/lineStanderChange.js"></script>
+<script src="js/lineStanderDelivered.js"></script>
 <%- include('layouts/scripts');-%>
 </body>
 </html>
