@@ -9,6 +9,7 @@ module.exports = function lineItem(oldLineItems){
     this.items = oldLineItems.items || {};
     this.totalQty = oldLineItems.totalQty || 0;
     this.totalPrice = oldLineItems.totalPrice || 0;
+    this.deliveryFee = oldLineItems.deliveryFee || 0;
 
 
     this.add = function(product, id){
@@ -22,7 +23,10 @@ module.exports = function lineItem(oldLineItems){
         storedItem.price = storedItem.product.price * storedItem.qty;
         this.totalQty++;
         this.totalPrice += storedItem.product.price;
-
+        if(this.deliveryFee === 0){
+            this.deliveryFee = 50;
+            this.totalPrice += this.deliveryFee;
+        }
     };
 
     this.gennerateArray = function () {
