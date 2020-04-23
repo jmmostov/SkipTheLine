@@ -3,6 +3,7 @@
 //const Product = require('Product');
 
 
+
 // When ever we recreate our lineItem in the this.add we pass our old lineItem into it.
 module.exports = function lineItem(oldLineItems){
     this.items = oldLineItems.items || {};
@@ -35,4 +36,5 @@ module.exports = function lineItem(oldLineItems){
         }
         return arr
     };
+
 };

@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-
+//Der oprettes et schema til Order, som indeholder attributterne: orderedBy, status, pickedUpBy, deliveryLocation,
+// lineItem og billingAddress, som indeholder en længere række informationer, som opstilles således, så man kan skelne mellem forskellig data.
 const orderSchema = new Schema({
     orderedBy: {
         type: mongoose.Schema.Types.ObjectID,
@@ -39,12 +40,11 @@ const orderSchema = new Schema({
     deliveryLocation: {
         type: String,
         required: true
-    },// kommentar til hvor man er på RF.
+    },// Her angives en kommentar til hvor man er på RF.
     lineItem: {
         //ref: 'LineItem'
     },
     billingAddress: {
-        // Ret til, når User er klar
         streetName: {
             type: String,
             required: true
