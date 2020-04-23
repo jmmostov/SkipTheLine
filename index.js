@@ -33,19 +33,24 @@ app.use(session({
     cookie: {maxAge: 180 * 60 * 1000}
 }))
 
-//Opretter en global variabel som kan tilgås fra alle ejs filer, fordi navbar er i dem alle.
+// Now, we are making a global variable which can be called everywhere on the server.
+// What this variable does is checking if the the user is logged in as a customer. This is possible since we
+// make the "_id" of the customer "userId" in the session when you log in as a customer. So we use this "loggedIn" as
+// a parameter to check for whenever we want to see if it's a customer that's logged in.
 global.loggedIn = null;
 app.use("*",(req, res, next)=>{
     loggedIn = req.session.userId;
     next()
 });
 
+// Same as the global variable above, just for the admin
 global.admin = null;
 app.use("*",(req,res,next)=>{
     admin = req.session.adminCheck;
     next();
 });
 
+// Same as the global variable above, just for the LineStander
 global.LSCheck = null;
 app.use("*",(req,res,next)=>{
     LSCheck = req.session.LSid;
