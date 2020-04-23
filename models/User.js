@@ -7,8 +7,6 @@ const bcrypt = require('bcrypt')
 
 //A schema represents what a collection looks like - specifying each attribute in the schema.
 const UserSchema = new Schema({
-
-    // TODO: skal laves om til enum
     userType: {
         type: String
     },

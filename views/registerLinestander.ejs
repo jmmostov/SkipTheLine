@@ -13,46 +13,10 @@
 </h1>
 
 <form action="/users/registerLinestander" method="POST" enctype="application/x-www-form-urlencoded">
-    <div class="container">
-        <div class="control-group">
-            <div class="form-group floating-label-form-group controls">
-                <label for="fullName"><b>Linestander full name</b></label><br>
-                <input type="text" placeholder="Full name" id="fullName" name="fullName">
-            </div>
-        </div>
-        <br>
-        <div class="control-group">
-            <div class="form-group floating-label-form-group controls">
-                <label for="email"><b>Email</b></label><br>
-                <input type="text" placeholder="Email" id="email" name="email">
-            </div>
-        </div>
-        <br>
-        <div class="control-group">
-            <div class="form-group floating-label-form-group controls">
-                <label for="phoneNumber"><b>Phone number</b></label><br>
-                <input type="text" placeholder="Phone number" id="phoneNumber" name="phoneNumber">
-            </div>
-        </div>
-        <br>
-        <div class="control-group">
-            <div class="form-group floating-label-form-group controls">
-                <label for="username2"><b>Linestander name</b></label><br>
-                <input type="text" placeholder="Username" id="username2" name="username2">
-            </div>
-        </div>
-        <br>
-        <div class="control-group">
-            <div class="form-group floating-label-form-group control">
-                <label for="password"><b>Linestander password</b></label><br>
-                <input type="password" placeholder="Enter Password" id="password" name="password">
-            </div>
-        </div>
-        <br>
+    <%- include('layouts/form.ejs');-%>
         <button type="submit" class="registerbtn">Register</button>
         <hr>
 
-    </div>
 </form>
 
 <section class="get">
@@ -64,10 +28,12 @@
            <div> <b>Username:</b> <%= users[i].username %> </div>
            <br>
            <div> <b>Full name:</b> <%= users[i].full_Name %> </div>
+           <div> <b>Full name:</b> <%= users[i].full_name.first_name %> </div>
            <br>
-           <div> <b>Email:</b> <%= users[i].email %> </div>
+           <div> <b>Email:</b> <%= users[i].lineStander.email %> </div>
            <br>
            <div> <b>phoneNumber:</b> <%= users[i].phone_number %> </div>
+           <div> <b>phoneNumber:</b> <%= users[i].phoneNumber %> </div>
            <br>
            <div> <b>ID:</b>  <%= users[i]._id %></div>
 
