@@ -20,17 +20,19 @@
 </form>
 
 <section class="get">
-    <h3> GET data</h3>
+    <h3> GET data for LineStander</h3>
     <div>
         <% for(var i = 0; i < users.length; i++) { %>
        <article class="data">
            <hr>
            <div> <b>Username:</b> <%= users[i].username %> </div>
            <br>
+           <div> <b>Full name:</b> <%= users[i].full_Name %> </div>
            <div> <b>Full name:</b> <%= users[i].full_name.first_name %> </div>
            <br>
-           <div> <b>Email:</b> <%= users[i].email %> </div>
+           <div> <b>Email:</b> <%= users[i].lineStander.email %> </div>
            <br>
+           <div> <b>phoneNumber:</b> <%= users[i].phone_number %> </div>
            <div> <b>phoneNumber:</b> <%= users[i].phoneNumber %> </div>
            <br>
            <div> <b>ID:</b>  <%= users[i]._id %></div>
@@ -40,8 +42,6 @@
     </div>
 </section>
 
-
-
 <section class="update">
     <h3>UPDATE data</h3>
     <form id="updateForm" name="updateForm" >
@@ -49,51 +49,28 @@
             <label for="id"> ID </label>
             <input type="text" id="id" name="id" placeholder="ID">
         </div>
+        <br>
         <div class="input">
             <label for="username"> Username </label>
-            <input type="text" id="updateUsername" placeholder="Username">
+            <input type="text" id="updateLSUsername" placeholder="Username">
         </div>
+        <br>
         <div class="input">
             <label for="fullName"> Full name </label>
             <input type="text" id="updateName" placeholder="Full Name">
         </div>
+        <br>
         <div class="input">
             <label for="email"> Email </label>
             <input type="text" id="updateEmail" placeholder="Email">
         </div>
+        <br>
         <div class="input">
             <label for="phoneNumber"> Phone Number </label>
             <input type="text" id="updateNumber" placeholder="Phone Number">
         </div>
         <br>
         <button type="submit" id="formButton" name="formButton" >Update</button>
-    </form>
-</section>
-
-<section class="new_product">
-    <h3>ADD A NEW PRODUCT</h3>
-    <form action="/product/new" method ="POST" enctype="application/x-www-form-urlencoded">
-        <div class="control-group">
-            <div class="form-group floating-label-form-group controls">
-                <div class="input">
-                    <label>New product</label>
-                    <input type="text" class="form-control" placeholder="Product name" id="productName" name="productName">
-                </div>
-            </div>
-            <br>
-        </div>
-        <div class="control-group">
-            <div class="form-group floating-label-form-group controls">
-                <div class="input">
-                    <label>Price</label>
-                    <input type="number" class="form-control" placeholder="Product price" id="price" name="price">
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary" id="addProduct">Add order</button>
-        </div>
     </form>
 </section>
 
@@ -107,15 +84,14 @@
                     <input type="text" placeholder="ID" id="deleteId" name="deleteId">
                 </div>
             </div>
-            <br>
         </div>
-        <button type="submit"> Delete</button>
-
+        <button type="submit"> Delete LineStander</button>
     </form>
 </section>
 
-<script src="js/updateUser.js"></script>
+<script src="js/updateLineStander.js"></script>
 <script src="js/deleteLineStander.js"></script>
+
 
 </body>
 

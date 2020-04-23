@@ -39,7 +39,7 @@ updateLS();
 
  */
 
-/*function updateUser() {
+/*function updateLineStander() {
     console.log('hej')
     const formUpdate = document.getElementById("updateForm")
 

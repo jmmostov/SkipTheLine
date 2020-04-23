@@ -37,12 +37,16 @@ section h3 {
     background: bisque;
 }
 
-.update {
+.getProducts {
     background: orange;
 }
 
-.new_product {
+.update {
     background: darkorange;
+}
+
+.new_product {
+    background: coral;
 }
 
 .delete {

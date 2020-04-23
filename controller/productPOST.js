@@ -8,7 +8,7 @@ module.exports = (req,res)=>{
         }
         else
             console.log(product)
-            return res.redirect('/registerLinestander');
+            return res.redirect('/adminProducts');
     })
     /*if(req.session.userId) {
         return res.render('create');
