@@ -19,7 +19,7 @@ module.exports = (req,res)=>{
             return res.redirect('/lineItems')
         }
         else {
-            return res.redirect('/order/' + Order.orderedBy);
+            return res.redirect('/orderHistory/' + req.session.userId);
 
         }
 

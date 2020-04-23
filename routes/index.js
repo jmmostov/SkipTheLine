@@ -90,7 +90,7 @@ router.get('/order',orderGET);
 router.post('/order/new',orderSTORE);
 
 // The users order history:
-router.get('/order/:id', orderHistory);
+router.get('/orderHistory/:id', orderHistory);
 
 // LINESTANDER:
 router.get('/lineStander', lineStanderGET);

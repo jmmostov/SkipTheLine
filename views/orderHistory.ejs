@@ -43,18 +43,11 @@
                 <br>
                 <div>
                     <h3>
-                         Pick-up status:
+                         Order status:
                     </h3>
-                        <% if(order[i].pickedUp == true) { %> Your order has been accepted by a lineStander. <% } %>
-                        <% if(order[i].pickedUp == false) { %> Your order is waiting for a lineStander to pick it up. <% } %> </h3>
-                </div>
-                    <br>
-                <div>
-                    <h3>
-                        Delivery status:
-                    </h3>
-                        <% if(order[i].delivered == true) { %> Your order has been delivered! <% } %>
-                        <% if(order[i].delivered == false) { %> Your order is heading your way! <% } %>
+                        <% if(order[i].status == "pending") { %>  This order is waiting for a LineStander to pick it up <% } %>
+                        <% if(order[i].status == "ongoing") { %> This order has been picked up by a LineStander and will be delivered soon <% } %>
+                        <% if(order[i].status == "completed") { %> This order has been delivered <% } %>
                 </div>
                     <br>
                 <div>
