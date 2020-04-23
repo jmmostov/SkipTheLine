@@ -23,9 +23,9 @@ module.exports = function lineItem(oldLineItems){
         storedItem.price = storedItem.product.price * storedItem.qty;
         this.totalQty++;
         this.totalPrice += storedItem.product.price;
-        if(this.deliveryFee === 0){
+        if(this.deliveryFee === 0){ //ensures that the deliveryFee is not added multiple times.
             this.deliveryFee = 50;
-            this.totalPrice += this.deliveryFee;
+            this.totalPrice += this.deliveryFee; //adds deliveryFee at 50kr on top of order.
         }
     };
 

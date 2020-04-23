@@ -1,6 +1,6 @@
 const Order = require('../models/Order');
 
-
+//creates an order using the Order.create method, which includes the attributes: orderedBy, deliveryLocation, lineItem and billingAddress.
 module.exports = (req,res)=>{
     Order.create({
         orderedBy: req.session.userId,

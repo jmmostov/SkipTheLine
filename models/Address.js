@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+
 const addressSchema = new Schema({
     street_name: {
         type: String,

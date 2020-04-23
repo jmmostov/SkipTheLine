@@ -1,8 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-//Der oprettes et schema til Order, som indeholder attributterne: orderedBy, status, pickedUpBy, deliveryLocation,
-// lineItem og billingAddress, som indeholder en længere række informationer, som opstilles således, så man kan skelne mellem forskellig data.
+//An orderschema is created, which holds the attributes: orderedBy, status, pickedUpBy, deliveryLocation, lineItem and billingAddress, which has even further informations about the address to be able to tell the different information apart from one another.
 const orderSchema = new Schema({
     orderedBy: {
         type: mongoose.Schema.Types.ObjectID,
