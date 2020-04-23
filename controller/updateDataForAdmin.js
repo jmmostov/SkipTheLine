@@ -23,11 +23,12 @@ module.exports = function(req,res) {
         {
             $set: {
                 username: req.body.username,
-                lineStander: {
-                    fullName: req.body.fullName,
-                    email: req.body.email,
-                    phoneNumber: req.body.phoneNumber,
-                }
+                fullName: {
+                    first_name: req.body.first_name,
+                    last_name: req.body.last_name
+                },
+                email: req.body.email,
+                phone_number: req.body.phoneNumber,
             }
         },
         {
