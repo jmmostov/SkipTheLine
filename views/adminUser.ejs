@@ -19,6 +19,12 @@
                 <hr>
                 <div> <b>Username:</b> <%= customer[i].username %> </div>
                 <br>
+                <div> <b>First name:</b> <%= customer[i].full_name.first_name %> </div>
+                <br>
+                <div> <b>Email:</b> <%= customer[i].email %> </div>
+                <br>
+                <div> <b>Phone number:</b> <%= customer[i].phone_number %> </div>
+                <br>
                 <div> <b>ID:</b> <%= customer[i]._id %></div>
 
             </article>
@@ -27,38 +33,7 @@
 </section>
 
 
-<section class="update">
-    <h3>UPDATE data</h3>
-    <form id="updateForm" name="updateForm" >
-        <div class="input">
-            <label for="id"> ID </label>
-            <input type="text" id="id" name="id" placeholder="ID">
-        </div>
-        <div class="input">
-            <label for="username"> Username </label>
-            <input type="text" id="updateUsername" placeholder="Username">
-        </div>
-        <br>
-        <button type="submit" id="formButton" name="formButton" >Update</button>
-    </form>
-</section>
-
-<section class="delete">
-    <h3>DELETE</h3>
-    <form id="deleteUser">
-        <div class="control-group">
-            <div class="form-group floating-label-form-group controls">
-                <div class="input">
-                    <label>ID</label>
-                    <input type="text" placeholder="ID" id="deleteUserId">
-                </div>
-            </div>
-            <br>
-        </div>
-        <button type="submit"> Delete </button>
-
-    </form>
-</section>
+<%- include('layouts/admin.ejs'); -%>
 
 <script src="js/updateUser.js"></script>
 <script src="js/deleteUser.js"></script>

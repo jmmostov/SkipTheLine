@@ -27,7 +27,7 @@
            <hr>
            <div> <b>Username:</b> <%= users[i].username %> </div>
            <br>
-           <div> <b>Full name:</b> <%= users[i].full_name.first_name + ' ' + users[i].full_name.last_name %> </div>
+           <div> <b>First name:</b> <%= users[i].full_name.first_name %> </div>
            <br>
            <div> <b>Email:</b> <%= users[i].email %> </div>
            <br>
@@ -40,55 +40,11 @@
     </div>
 </section>
 
-<section class="update">
-    <h3>UPDATE data</h3>
-    <form id="updateForm" name="updateForm" >
-        <div class="input">
-            <label for="id"> ID </label>
-            <input type="text" id="id" name="id" placeholder="ID">
-        </div>
-        <br>
-        <div class="input">
-            <label for="username"> Username </label>
-            <input type="text" id="updateLSUsername" placeholder="Username">
-        </div>
-        <br>
-        <div class="input">
-            <label for="fullName"> Full name </label>
-            <input type="text" id="updateName" placeholder="Full Name">
-        </div>
-        <br>
-        <div class="input">
-            <label for="email"> Email </label>
-            <input type="text" id="updateEmail" placeholder="Email">
-        </div>
-        <br>
-        <div class="input">
-            <label for="phoneNumber"> Phone Number </label>
-            <input type="text" id="updateNumber" placeholder="Phone Number">
-        </div>
-        <br>
-        <button type="submit" id="formButton" name="formButton" >Update</button>
-    </form>
-</section>
 
-<section class="delete">
-    <h3>DELETE</h3>
-    <form id="deleteLineStander">
-        <div class="control-group">
-            <div class="form-group floating-label-form-group controls">
-                <div class="input">
-                    <label>ID</label>
-                    <input type="text" placeholder="ID" id="deleteId" name="deleteId">
-                </div>
-            </div>
-        </div>
-        <button type="submit"> Delete LineStander</button>
-    </form>
-</section>
+<%- include('layouts/admin.ejs'); -%>
 
-<script src="js/updateLineStander.js"></script>
-<script src="js/deleteLineStander.js"></script>
+<script src="js/updateUser.js"></script>
+<script src="js/deleteUser.js"></script>
 
 
 </body>
