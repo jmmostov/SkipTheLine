@@ -1,5 +1,5 @@
 //update username via objectId that has been created by mongoDB
-const Order = require('../models/Order');
+const Order = require('../../models/Order');
 
 /*
 module.exports = function (req,res) {
@@ -13,7 +13,6 @@ module.exports = function (req,res) {
 
 module.exports = function(req,res) {
     console.log(req.body._id)
-    console.log(LSCheck)
 
     Order.findOneAndUpdate(
         // Vi kan ikke komme ind og få fat på værdierne i vores ejs ved at bruge "req.body..."
@@ -23,8 +22,7 @@ module.exports = function(req,res) {
         },
         {
             $set: {
-                status: ["ongoing"],
-                pickedUpBy: LSCheck
+                status: ["completed"]
             }
         },
         {

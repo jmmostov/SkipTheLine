@@ -1,5 +1,10 @@
-const User = require('../models/User.js');
-const Address = require('../models/Address')
+/*
+Lige foreløbig har jeg bare copy/paste koden fra storeUser.js, det skal dog lige ændres så vi ikke bare direkte genbruger, men finder
+en anden metode at gøre dette på
+ */
+
+const User = require('../../models/User.js');
+const Address = require('../../models/Address')
 const path = require('path');
 
 
@@ -27,7 +32,7 @@ module.exports = (req,res)=>{
                     },
                     email: req.body.email,
                     phoneNumber: req.body.phoneNumber,
-                    userType: "customer",
+                    userType: "linestander",
                 },
                 (error,User)=>{
                     if(error) {
@@ -39,10 +44,10 @@ module.exports = (req,res)=>{
                         return res.redirect('/register')
                     }
                     else {
-                        res.redirect('/login');
+                        res.redirect('/registerLinestander');
                         console.log(User)
                     }
-            })
+                })
         }
     })
 

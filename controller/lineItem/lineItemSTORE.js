@@ -1,5 +1,5 @@
-const Product = require('../models/Product');
-const LineItem = require('../models/LineItem');
+const Product = require('../../models/Product');
+const LineItem = require('../../models/LineItem');
 //const path = require('path');
 
 // Here we want to add the chosen product to the customers lineItem. This lineItem kind of like a shopping cart.

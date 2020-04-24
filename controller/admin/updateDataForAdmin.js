@@ -1,5 +1,5 @@
 //update username via objectId that has been created by mongoDB
-var User = require('../models/User');
+var User = require('../../models/User');
 
 /*
 module.exports = function (req,res) {
