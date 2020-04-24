@@ -1,5 +1,5 @@
 /*
-Lige foreløbig har jeg bare copy/paste koden fra storeUser.js, det ska dog lige ændres så vi ikke bare direkte genbruger, men finder
+Lige foreløbig har jeg bare copy/paste koden fra storeUser.js, det skal dog lige ændres så vi ikke bare direkte genbruger, men finder
 en anden metode at gøre dette på
  */
 

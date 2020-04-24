@@ -14,7 +14,7 @@ module.exports = (req,res)=>{
                 // in as a customer. And what better way than to assign the logged in users _id to the session
                 req.session.adminCheck = user.userType;
             }
-            //TODO: Har vi lavet linjen nedenfor for at admin også kan bevæge sig rundt som user? Ellers synes jeg vi skal slette den
+            /*TODO: Har vi lavet linjen nedenfor for at admin også kan bevæge sig rundt som user? Ellers synes jeg vi skal slette den*/
             req.session.userId = user._id
             // Redirect to the admin's "front page" if you will
             res.redirect('/registerLinestander')

@@ -1,5 +1,4 @@
 //finds the userType (from our database) with the name linestander and show them
-
 var User = require('../models/User');
 var info = User.find({userType: 'linestander'});
 const Product = require('../models/Product.js');

@@ -1,4 +1,4 @@
-
+//Creates a constant that imports the model Product
 const Product = require('../models/Product.js');
 
 module.exports = async (req,res)=> {

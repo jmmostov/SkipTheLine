@@ -1,5 +1,5 @@
+//Gets the element from the form with the id deleteUser in the ejs "admin".
 const formElem5 = document.getElementById('deleteUser');
-
 
 function deleteUser(){
 
