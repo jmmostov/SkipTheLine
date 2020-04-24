@@ -1,4 +1,4 @@
-const Product = require('../models/Product.js');
+const Product = require('../../models/Product.js');
 const path = require('path');
 //Uses the create function on the constant Products that holds data from the model Product.
 module.exports = (req,res)=>{

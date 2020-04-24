@@ -1,5 +1,5 @@
 //Creates a constant that imports the model Product
-const Product = require('../models/Product.js');
+const Product = require('../../models/Product.js');
 
 module.exports = async (req,res)=> {
     // We try to find all products created in the database

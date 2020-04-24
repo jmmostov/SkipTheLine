@@ -1,4 +1,4 @@
-const Order = require('../models/Order');
+const Order = require('../../models/Order');
 
 module.exports = async (req,res)=> {
     // We try to find all products created in the database

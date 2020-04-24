@@ -1,4 +1,4 @@
-LineItem = require('../models/LineItem');
+LineItem = require('../../models/LineItem');
 
 //const Product = require('../models/Product.js');
 

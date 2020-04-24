@@ -1,4 +1,4 @@
-const Product = require('../models/Product.js');
+const Product = require('../../models/Product.js');
 
 module.exports = async (req,res)=> {
     // We find all products created in the database

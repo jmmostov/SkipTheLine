@@ -1,37 +1,37 @@
 const express = require('express');
 const router = express.Router();
 
-const newUserController = require('../controller/newUser')
-const storeUserController = require('../controller/storeUser')
+const newUserController = require('../controller/user/newUser')
+const storeUserController = require('../controller/user/storeUser')
 const homeController = require('../controller/homeController')
-const loginController = require('../controller/loginController')
-const loginUserController = require('../controller/loginUser')
-const adminLoginController = require('../controller/getRegisterLinestander')
-const storeLinestanderController = require('../controller/storeLinestander')
-const updateDataAdminController = require('../controller/updateDataForAdmin')
-const logoutController = require('../controller/logoutController')
-const deleteAdminController = require('../controller/deleteDataAdmin')
-const orderGET = require('../controller/orderGET');
-const orderSTORE = require('../controller/orderSTORE');
-const orderHistory = require('../controller/orderHistory');
-const lineStanderGET = require('../controller/lineStanderGET');
+const loginController = require('../controller/user/loginController')
+const loginUserController = require('../controller/user/loginUser')
+const adminLoginController = require('../controller/admin/getRegisterLinestander')
+const storeLinestanderController = require('../controller/admin/storeLinestander')
+const updateDataAdminController = require('../controller/admin/updateDataForAdmin')
+const logoutController = require('../controller/user/logoutController')
+const deleteAdminController = require('../controller/admin/deleteDataAdmin')
+const orderGET = require('../controller/order/orderGET');
+const orderSTORE = require('../controller/order/orderSTORE');
+const orderHistory = require('../controller/order/orderHistory');
+const lineStanderGET = require('../controller/lineStander/lineStanderGET');
 const errorPage = require('../controller/errorPage');
-const adminUserController = require('../controller/getAdminUser');
-const adminProductsController = require('../controller/adminProducts')
-const adminDeleteProductsController = require('../controller/deleteProducts')
+const adminUserController = require('../controller/admin/getAdminUser');
+const adminProductsController = require('../controller/admin/adminProducts')
+const adminDeleteProductsController = require('../controller/admin/deleteProducts')
 
 
 // PRODUCTS:
-const productGET = require('../controller/productGET');
-const productPOST = require('../controller/productPOST');
+const productGET = require('../controller/products/productGET');
+const productPOST = require('../controller/products/productPOST');
 
 // LINEITEM:
-const lineItemSTORE = require('../controller/lineItemSTORE');
-const lineItemGET = require('../controller/lineItemGET');
+const lineItemSTORE = require('../controller/lineItem/lineItemSTORE');
+const lineItemGET = require('../controller/lineItem/lineItemGET');
 
 // LINESTANDER:
-const lineStanderChange = require('../controller/lineStanderChange');
-const lineStanderDelivered = require('../controller/lineStanderDelivered');
+const lineStanderChange = require('../controller/lineStander/lineStanderChange');
+const lineStanderDelivered = require('../controller/lineStander/lineStanderDelivered');
 
 
 

@@ -1,6 +1,6 @@
 // We need bcrypt to unhash (?) the password to check if it's the right password.
 const bcrypt = require('bcrypt')
-const User = require('../models/User')
+const User = require('../../models/User')
 
 module.exports = (req,res)=>{
     const { username,password } = req.body;
