@@ -33,6 +33,9 @@ const lineItemGET = require('../controller/lineItemGET');
 const lineStanderChange = require('../controller/lineStanderChange');
 const lineStanderDelivered = require('../controller/lineStanderDelivered');
 
+// ADDRESS:
+const addressGET = require('../controller/addressGET');
+const addressPUT = require('../controller/addressPUT');
 
 
 /* GET home page. */
@@ -85,22 +88,23 @@ router.get('/lineItems',lineItemGET);
 // ORDER:
 // The page where you type your billing address and the delivery location:
 router.get('/order',orderGET);
-
 // The button that posts your order in the database:
 router.post('/order/new',orderSTORE);
-
 // The users order history:
 router.get('/orderHistory/:id', orderHistory);
 
+
 // LINESTANDER:
 router.get('/lineStander', lineStanderGET);
-
 // Pick up order with put-method
 router.put('/update/LS', lineStanderChange);
-
 //
 router.put('/update/LSdelivery', lineStanderDelivered);
 
+
+// ADDRESS:
+router.get('/address', addressGET);
+router.put('/update/address', addressPUT);
 
 // ERROR PAGE:
 router.get('/error', errorPage);

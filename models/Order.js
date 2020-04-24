@@ -42,29 +42,6 @@ const orderSchema = new Schema({
     },// Her angives en kommentar til hvor man er på RF.
     lineItem: {
         //ref: 'LineItem'
-    },
-    billingAddress: {
-        streetName: {
-            type: String,
-            required: true
-        },
-        streetNr: {
-            type: Number,
-            required: true
-        },
-        zipCode: {
-            type: Number,
-            required: true
-        },
-        city: {
-            type:
-            String,
-            required: true
-        },
-        country: {
-            type: String,
-            required: true
-        }
     }
 });
 

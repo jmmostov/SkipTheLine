@@ -50,17 +50,6 @@
                         <% if(order[i].status == "completed") { %> This order has been delivered <% } %>
                 </div>
                     <br>
-                <div>
-                    <h3>
-                        Billing Address:
-                    </h3>
-                    <br>
-                        <%= order[i].billingAddress.streetName + " " + order[i].billingAddress.streetNr + ", " +
-                        order[i].billingAddress.zipCode + " " + order[i].billingAddress.city + ", " + order[i].billingAddress.country%>
-                    <br>
-                    <br>
-                    <hr>
-                </div>
             <% } %>
         </div>
     </div>

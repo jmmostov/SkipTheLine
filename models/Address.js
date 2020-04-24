@@ -3,27 +3,27 @@ const Schema = mongoose.Schema
 
 
 const addressSchema = new Schema({
-    street_name: {
+    streetName: {
         type: String,
         required: true,
     },
-    street_nr: {
+    streetNr: {
         type: Number,
         required: true
     },
-    zipcode: {
+    zipCode: {
             type: Number,
             required: true
         },
 
-        city_name: {
-            type: String,
-            required: true
-        },
-        country: {
+    city: {
         type: String,
-            required: true
-        }
+        required: true
+    },
+    country: {
+    type: String,
+        required: true
+    }
 })
 
 const Address = mongoose.model('Address',addressSchema);

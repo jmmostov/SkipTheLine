@@ -10,11 +10,11 @@ const path = require('path');
 
 module.exports = (req,res)=>{
     Address.create({
-        street_name: req.body.streetName,
-        street_nr: req.body.streetNumber,
-        zipcode: req.body.zipCode,
-        city_name: req.body.cityName,
-        country: req.body.countryName,
+        streetName: req.body.streetName,
+        streetNr: req.body.streetNr,
+        zipCode: req.body.zipCode,
+        city: req.body.city,
+        country: req.body.country,
     },(error,Address)=>{
         if(error) {
             console.log(error)
@@ -22,16 +22,16 @@ module.exports = (req,res)=>{
         }
         else {
             User.create({
-                    username: req.body.username_customer,
+                    username: req.body.username,
                     password: req.body.password,
-                    home_address_id: Address._id,
-                    billing_address_id: Address._id,
-                    full_name: {
-                        first_name: req.body.first_name,
-                        last_name: req.body.last_name
+                    homeAddressId: Address._id,
+                    billingAddressId: Address._id,
+                    fullName: {
+                        firstName: req.body.firstName,
+                        lastName: req.body.lastName
                     },
                     email: req.body.email,
-                    phone_number: req.body.phone_number,
+                    phoneNumber: req.body.phoneNumber,
                     userType: "linestander",
                 },
                 (error,User)=>{

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<%- include('layouts/header.ejs');-%>
+
+<body>
+<%- include('layouts/navbar.ejs');-%>
+
+<h2>
+    Please type in your new billing address
+</h2>
+<form id="changeBillingAddress">
+    <div class="control-group">
+        <div class="form-group floating-label-form-group control">
+            Address id:<p id="addressId"><%= user%></p>
+            <label for="streetName"><b>Street name:</b></label>
+            <input type="text" placeholder="Enter the name of your street" id="streetName" name="streetName">
+            <br>
+            <label for="streetNr"><b>Street number:</b></label>
+            <input type="number" placeholder="Enter your street number" id="streetNr" name="streetNr">
+            <br>
+            <label for="zipCode"><b>ZIP code:</b></label>
+            <input type="number" placeholder="Enter your ZIP code" id="zipCode" name="zipCode">
+            <br>
+            <label for="city"><b>City:</b></label>
+            <input type="text" placeholder="Enter your city" id="city" name="city">
+            <br>
+            <label for="country"><b>Country:</b></label>
+            <input type="text" placeholder="Enter your country" id="country" name="country">
+        </div>
+        <br>
+        <button type="submit" class="changeBillingAddress">Change billing address</button>
+    </div>
+</form>
+
+<br>
+<script src="js/changeBillingAddress.js"></script>
+<%- include('layouts/scripts');-%>
+</body>
+
+</html>
