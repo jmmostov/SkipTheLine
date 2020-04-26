@@ -1,5 +1,5 @@
-const Address = require('../models/Address');
-const User = require('../models/User');
+const Address = require('../../models/Address');
+const User = require('../../models/User');
 
 
 module.exports = async (req,res)=> {

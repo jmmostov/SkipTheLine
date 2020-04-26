@@ -14,7 +14,6 @@ const deleteAdminController = require('../controller/admin/deleteDataAdmin')
 const orderGET = require('../controller/order/orderGET');
 const orderSTORE = require('../controller/order/orderSTORE');
 const orderHistory = require('../controller/order/orderHistory');
-const lineStanderGET = require('../controller/lineStander/lineStanderGET');
 const errorPage = require('../controller/errorPage');
 const adminUserController = require('../controller/admin/getAdminUser');
 const adminProductsController = require('../controller/admin/adminProducts')
@@ -30,6 +29,7 @@ const lineItemSTORE = require('../controller/lineItem/lineItemSTORE');
 const lineItemGET = require('../controller/lineItem/lineItemGET');
 
 // LINESTANDER:
+const lineStanderGET = require('../controller/lineStander/lineStanderGET');
 const lineStanderChange = require('../controller/lineStander/lineStanderChange');
 const lineStanderDelivered = require('../controller/lineStander/lineStanderDelivered');
 
