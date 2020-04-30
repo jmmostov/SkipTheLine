@@ -23,10 +23,7 @@ module.exports = function(req,res) {
         {
             $set: {
                 username: req.body.username,
-                fullName: {
-                    firstName: req.body.firstName,
-                    lastName: req.body.lastName
-                },
+                fullName: req.body.fullName,
                 email: req.body.email,
                 phoneNumber: req.body.phoneNumber,
             }

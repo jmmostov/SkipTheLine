@@ -18,27 +18,23 @@ const UserSchema = new Schema({
         type: mongoose.Schema.Types.ObjectID,
         ref: 'Address'
     },
-        username: {
-            type: String,
-            unique: true,
-            required: [true, 'Please provide a username'],
-            uniqueCaseInsensitive: true
-        },
-        password: {
-            type: String,
-            required: [true, 'Please provide a password']
-        },
-        fullName: {
-            firstName: String,
-            lastName: String
-        },
-        email: {
-            type: String,
-            unique: true,
-            required: true
-        },
-        phoneNumber: Number
-
+    username: {
+        type: String,
+        unique: true,
+        required: [true, 'Please provide a username'],
+        uniqueCaseInsensitive: true
+    },
+    password: {
+        type: String,
+        required: [true, 'Please provide a password']
+    },
+    fullName: String,
+    email: {
+        type: String,
+        unique: true,
+        required: true
+    },
+    phoneNumber: String
 });
 
 UserSchema.pre('save',function(next) {

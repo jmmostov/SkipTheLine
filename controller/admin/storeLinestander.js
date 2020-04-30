@@ -26,10 +26,7 @@ module.exports = (req,res)=>{
                     password: req.body.password,
                     homeAddressId: Address._id,
                     billingAddressId: Address._id,
-                    fullName: {
-                        firstName: req.body.firstName,
-                        lastName: req.body.lastName
-                    },
+                    fullName: req.body.fullName,
                     email: req.body.email,
                     phoneNumber: req.body.phoneNumber,
                     userType: "linestander",
