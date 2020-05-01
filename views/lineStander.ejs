@@ -11,7 +11,7 @@
         <% for(var i = 0; i < availableOrders.length; i++) { %>
 
             <article class="data">
-                <div> <h3>Order id:</h3> <p id="orderId"> <%= availableOrders[i]._id %> </p> </div>
+                <div> <h3>Order id:</h3> <p class="orderName"> <%= availableOrders[i]._id %> </p> </div>
                 <br>
                 <div> <h3>Ordered by:</h3> <%= availableOrders[i].orderedBy %> </div>
                 <br>
@@ -35,7 +35,7 @@
 
             </article>
             <% } %>
-            <button type="button" id="pickUpButton">Take care of this delivery</button>
+            <button type="button" name="pickUpButton">Take care of this delivery</button>
         <br>
             <br>
         <% } %>

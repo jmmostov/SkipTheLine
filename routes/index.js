@@ -7,7 +7,6 @@ const homeController = require('../controller/homeController')
 const loginController = require('../controller/user/loginController')
 const loginUserController = require('../controller/user/loginUser')
 const adminLoginController = require('../controller/admin/getRegisterLinestander')
-const storeLinestanderController = require('../controller/admin/storeLinestander')
 const updateDataAdminController = require('../controller/admin/updateDataForAdmin')
 const logoutController = require('../controller/user/logoutController')
 const deleteAdminController = require('../controller/admin/deleteDataAdmin')
@@ -27,6 +26,8 @@ const productPOST = require('../controller/products/productPOST');
 // LINEITEM:
 const lineItemSTORE = require('../controller/lineItem/lineItemSTORE');
 const lineItemGET = require('../controller/lineItem/lineItemGET');
+const lineItemReduce = require('../controller/lineItem/lineItemReduce');
+const lineItemDelete = require('../controller/lineItem/lineItemDELETE')
 
 // LINESTANDER:
 const lineStanderGET = require('../controller/lineStander/lineStanderGET');
@@ -34,8 +35,8 @@ const lineStanderChange = require('../controller/lineStander/lineStanderChange')
 const lineStanderDelivered = require('../controller/lineStander/lineStanderDelivered');
 
 // ADDRESS:
-const addressGET = require('../controller/addressGET');
-const addressPUT = require('../controller/addressPUT');
+const addressGET = require('../controller/address/addressGET');
+const addressPUT = require('../controller/address/addressPUT');
 
 
 /* GET home page. */
@@ -43,7 +44,7 @@ router.get('/', homeController)
 
 //Router to Register page
 router.get('/register', newUserController)
-router.post('/users/register', storeUserController)
+router.post('/users/register', (req, res)=>{storeUserController(req,res,'customer')})
 
 //Router to Login page
 router.get('/login',loginController)
@@ -54,7 +55,7 @@ router.get('/logout', logoutController)
 
 //router to admin login page
 router.get('/registerLinestander', adminLoginController)
-router.post('/users/registerLinestander', storeLinestanderController)
+router.post('/users/registerLinestander', (req, res)=>{storeUserController(req, res, 'linestander')})
 
 
 
@@ -84,6 +85,13 @@ router.get('/lineItem/:id', lineItemSTORE);
 
 // Now, we access the controller to show all the lineItems when trying to access the route '/lineItems'
 router.get('/lineItems',lineItemGET);
+
+
+router.get('/lineItem/reduce/:id', lineItemReduce);
+
+
+router.get('/lineItem/delete/:id', lineItemDelete);
+
 
 // ORDER:
 // The page where you type your billing address and the delivery location:

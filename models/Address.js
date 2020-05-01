@@ -12,9 +12,9 @@ const addressSchema = new Schema({
         required: true
     },
     zipCode: {
-            type: Number,
-            required: true
-        },
+        type: Number,
+        required: true
+    },
 
     city: {
         type: String,

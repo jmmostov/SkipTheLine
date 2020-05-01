@@ -11,6 +11,6 @@ module.exports = (req,res)=> {
     res.render('lineItems',{
         products: lineItems.gennerateArray(),
         totalPrice: lineItems.totalPrice,
-        deliveryFee: lineItems.deliveryFee //adds deliveryFee at 50kr to the order.
+        deliveryFee: lineItems.deliveryFee, //adds deliveryFee at 50kr to the order.
     });
 };
