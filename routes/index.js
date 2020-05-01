@@ -18,6 +18,7 @@ const errorPage = require('../controller/errorPage');
 const adminUserController = require('../controller/admin/getAdminUser');
 const adminProductsController = require('../controller/admin/adminProducts')
 const adminDeleteProductsController = require('../controller/admin/deleteProducts')
+const accountSettings = require('../controller/user/accountSettings');
 
 
 // PRODUCTS:
@@ -109,6 +110,8 @@ router.put('/update/address', addressPUT);
 // ERROR PAGE:
 router.get('/error', errorPage);
 
+//USER:
+router.get('/accountSettings', accountSettings);
 
 
 

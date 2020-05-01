@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<%- include('layouts/header.ejs');-%>
+
+<body>
+<%- include('layouts/navbar.ejs');-%>
+<%- include('layouts/scripts');-%>
+
+<h1>
+    User account settings
+</h1>
+
+<!-- Values that the user are allowed to modify -->
+<section class="get">
+    <h3> GET data</h3>
+    <div>
+        <% for(var i = 0; i < customer.length; i++) { %>
+            <article class="data">
+                <% if(customer[i]._id == loggedIn) { %>
+                <hr>
+                <div> <b>Username:</b> <%= customer[i].username %> </div>
+                <br>
+                <div> <b>Full name:</b> <%= customer[i].fullName %> </div>
+                <br>
+                <div> <b>Email:</b> <%= customer[i].email %> </div>
+                <br>
+                <div> <b>Phone number:</b> <%= customer[i].phoneNumber %> </div>
+                <br>
+                <div> <b>ID:</b> <%= customer[i]._id %></div>
+                <% } %>
+
+            </article>
+        <% } %>
+    </div>
+</section>
+
+<!-- Uses the same layout as admin to modify user settings -->
+<%- include('layouts/admin.ejs'); -%>
+
+
+<!-- Uses updateUser.js PUT method to change values of the user-->
+<script src="js/updateUser.js"></script>
+
+
+</body>
+
+</html>
