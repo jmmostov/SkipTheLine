@@ -23,11 +23,28 @@ module.exports = function lineItem(oldLineItems){
         storedItem.price = storedItem.product.price * storedItem.qty;
         this.totalQty++;
         this.totalPrice += storedItem.product.price;
-        if(this.deliveryFee === 0){ //ensures that the deliveryFee is not added multiple times.
+        if(this.deliveryFee <= 0    ){ //ensures that the deliveryFee is not added multiple times.
             this.deliveryFee = 50;
             this.totalPrice += this.deliveryFee; //adds deliveryFee at 50kr on top of order.
         }
     };
+
+    this.deleteOne = function(id) {
+        this.items[id].qty--;
+        this.items[id].price -= this.items[id].product.price;
+        this.totalQty--;
+        this.totalPrice -= this.items[id].product.price;
+
+        if(this.items[id].qty <= 0){
+            delete this.items[id];
+        }
+    }
+
+    this.deleteAll = function (id) {
+        this.totalQty -= this.items[id].qty;
+        this.totalPrice -= this.items[id].price;
+        delete this.items[id];
+    }
 
     this.gennerateArray = function () {
         let arr = [];

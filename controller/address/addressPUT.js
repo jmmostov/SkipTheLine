@@ -1,5 +1,5 @@
 //update username via objectId that has been created by mongoDB
-const Address = require('../models/Address');
+const Address = require('../../models/Address');
 
 /*
 module.exports = function (req,res) {

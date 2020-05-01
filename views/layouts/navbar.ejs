@@ -40,10 +40,10 @@
 
                 <% if(loggedIn) { %>
                     <li class="nav-item">
-                        <a class="nav-link" href="/logout">Log out</a>
+                        <a class="nav-link" href="/orderHistory/<%= loggedIn%>">Order history</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/orderHistory/<%= loggedIn%>">Order history</a>
+                        <a class="nav-link" href="/logout">Log out</a>
                     </li>
                 <% } %>
 
@@ -55,6 +55,13 @@
                         <a class="nav-link" href="/logout">Log out</a>
                     </li>
                 <% } %>
+
+                <% if(loggedIn) { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/accountSettings">Account Settings</a>
+                    </li>
+                <% } %>
+
             </ul>
         </div>
     </div>

@@ -24,7 +24,7 @@ module.exports = (req,res,userType)=>{
                     fullName: req.body.fullName,
                     email: req.body.email,
                     phoneNumber: req.body.phoneNumber,
-                    userType
+                    userType: userType
                 },
                 (error,User)=>{
                     if(error) {
@@ -33,7 +33,11 @@ module.exports = (req,res,userType)=>{
                         req.session.validationErrors = validationErrors
                         //req.flash('validationErrors',validationErrors)
                         //console.log(error)
+
                         return res.redirect('/register')
+                    }
+                    else if(admin){
+                        return res.redirect('/registerLinestander')
                     }
                     else {
                         res.redirect('/login');

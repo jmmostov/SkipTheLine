@@ -22,7 +22,14 @@
                     <h4 class="post-subtitle">
                         Price for these products: <%= products[i].price%>,-
                     </h4>
-                    <br>
+                    <div class="form-group">
+                        <!-- We create a button, "Add to cart", which is a link to /lineItem/:id -->
+                        <a href="/lineItem/reduce/<%= products[i].product._id%>" role="button">Delete one</a>
+                    </div>
+                    <div class="form-group">
+                        <!-- We create a button, "Add to cart", which is a link to /lineItem/:id -->
+                        <a href="/lineItem/delete/<%= products[i].product._id%>" role="button">Delete all</a>
+                    </div>
                     <br>
 
                 </div>
