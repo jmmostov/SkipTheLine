@@ -20,7 +20,7 @@ const UserSchema = new Schema({
     },
     username: {
         type: String,
-        unique: true,
+        unique: [true, 'The username has already been taken, please choose a different'],
         required: [true, 'Please provide a username'],
         uniqueCaseInsensitive: true
     },
@@ -31,8 +31,8 @@ const UserSchema = new Schema({
     fullName: String,
     email: {
         type: String,
-        unique: true,
-        required: true
+        unique: [true, 'The email address already exist, please choose a unique email address'],
+        required: [true, 'Please provide an email address']
     },
     phoneNumber: String
 });
@@ -46,7 +46,7 @@ UserSchema.pre('save',function(next) {
     })
 })
 
-UserSchema.plugin(uniqueValidator, {message: 'Username {VALUE} already exist, please provide a {TYPE} username'})
+UserSchema.plugin(uniqueValidator, {message: '{PATH} with the value {VALUE} has to be {TYPE}'})
 // Access database via. mongoose model - create a model for user - letting other files access.
 const User = mongoose.model('User',UserSchema)
 module.exports = User;

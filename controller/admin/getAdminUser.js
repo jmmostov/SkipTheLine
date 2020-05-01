@@ -1,17 +1,18 @@
-//finds the userType (from our database) with the name linestander and show them
+//finds the userType (from our database) with the name customer and show them
+//does the exact same thing as getRegisterLinestander.js
 var User = require('../../models/User');
-var info = User.find({userType: 'customer'});
 
 module.exports = async (req,res)=>{
-    await info.exec(function(err,user) {
+    await User.find({userType: 'customer'}, function (err,user) {
         if(err) {
             console.log(err)
-        }//If it is an admin that is logged in
-        if(admin){
-            res.render('adminUser',{
-                customer: user,
-            });
-        }//Else if it isn't admin that is logged in then if will be redirected to the error page.
-        else return res.redirect('/error');
-    });
+        }
+        if (admin) {
+            res.render('adminUser', {
+                customer: user
+            })
+        }
+        // if it isn't admin that is logged in then if will be redirected to the error page
+        else return res.redirect('/error')
+    })
 };

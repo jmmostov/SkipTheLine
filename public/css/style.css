@@ -116,3 +116,8 @@ ul li a:hover {
     color: orangered;
     font-weight: bold;
 }
+
+.errorMessages {
+    background: #e74c3c;
+    list-style-type: circle;
+}

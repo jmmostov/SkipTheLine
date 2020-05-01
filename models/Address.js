@@ -5,24 +5,23 @@ const Schema = mongoose.Schema
 const addressSchema = new Schema({
     streetName: {
         type: String,
-        required: true,
+        required: [true, 'Please fill in yout street name'],
     },
     streetNr: {
-        type: String,
-        required: true
+        type: String
     },
     zipCode: {
             type: Number,
-            required: true
+            required: [true, 'Please provide zipCode']
         },
 
     city: {
         type: String,
-        required: true
+        required: [true, 'Please write your city name']
     },
     country: {
     type: String,
-        required: true
+        required: [true, 'Remember to fill in your country']
     }
 })
 

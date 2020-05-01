@@ -3,7 +3,7 @@ const Address = require('../../models/Address')
 const path = require('path');
 
 
-module.exports = (req,res)=>{
+module.exports = (req,res,userType)=>{
     Address.create({
         streetName: req.body.streetName,
         streetNr: req.body.streetNr,
@@ -24,7 +24,7 @@ module.exports = (req,res)=>{
                     fullName: req.body.fullName,
                     email: req.body.email,
                     phoneNumber: req.body.phoneNumber,
-                    userType: "customer",
+                    userType
                 },
                 (error,User)=>{
                     if(error) {
