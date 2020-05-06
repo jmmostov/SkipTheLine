@@ -1,24 +1,26 @@
-const formElem4 = document.getElementById('deliveredButton');
+const formElem4 = document.getElementsByName('deliveredButton');
+
 
 function delivered(){
+    for(let i = 0; i < formElem4.length; i++) {
+        formElem4[i].onclick = (event) => {
+            event.preventDefault();
 
-    formElem4.onclick = (event) =>{
-        event.preventDefault();
-
-        fetch('/update/LSdelivery', {
-            method: 'PUT',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "_id":document.getElementById("orderIdAfterPickUp").innerText,
+            fetch('/update/LSdelivery', {
+                method: 'PUT',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "_id": document.getElementsByClassName("orderIdAfterPickUp")[i].innerText,
+                })
             })
-        })
-            .then(json => {
-                location.reload();
-            })
-    };
+                .then(json => {
+                    location.reload();
+                })
+        };
+    }
 }
 delivered();
 

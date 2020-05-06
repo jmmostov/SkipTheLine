@@ -12,8 +12,6 @@ module.exports = function (req,res) {
  */
 
 module.exports = function(req,res) {
-    console.log(req.body._id)
-    console.log(LSCheck)
 
     Order.findOneAndUpdate(
         // Vi kan ikke komme ind og få fat på værdierne i vores ejs ved at bruge "req.body..."
@@ -35,7 +33,7 @@ module.exports = function(req,res) {
             //console.log(result + "Hej Stine, er d")
             res.end();
         })
-        .catch(error => console.error(error + "Stine er sej"))
+        .catch(error => console.error(error))
 }
 
 /*

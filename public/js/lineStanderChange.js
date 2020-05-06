@@ -1,14 +1,13 @@
 //We get the element from the button with the id "pickUpButton" in ejs lineStander and save it in a constant.
 const formElem3 = document.getElementsByName('pickUpButton');
-const orderID = document.getElementsByClassName("orderId")
+
 
 //In the function we preventDefault when the button is clicked.
 //Then we fetch the API call /update/LS, and use the PUT method. The we stringify the id to send it to the client.
 function updateLS(){
     for(let i = 0; i < formElem3.length; i++){
-        formElem3[i].onclick = (event) =>{
+        formElem3[i].onclick = (event) => {
             event.preventDefault();
-
             fetch('/update/LS', {
                 method: 'PUT',
                 headers: {
@@ -16,13 +15,13 @@ function updateLS(){
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    "_id": orderID
+                    "_id": document.getElementsByClassName("orderName")[i].innerText
                 })
             })
                 .then(json => {
                     location.reload();
                 })
-        };
+        }
     }
 }
 updateLS();

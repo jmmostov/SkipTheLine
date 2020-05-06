@@ -1,18 +1,7 @@
 //update username via objectId that has been created by mongoDB
 const Order = require('../../models/Order');
 
-/*
-module.exports = function (req,res) {
-    User.findByIdAndUpdate({_id: req.params.id}, req.body).then(function (user) {
-        User.findOne({_id:req.params.id}).then(function (user) {
-            res.send(user)
-        })
-    });
-}
- */
-
 module.exports = function(req,res) {
-    console.log(req.body._id)
 
     Order.findOneAndUpdate(
         // Vi kan ikke komme ind og få fat på værdierne i vores ejs ved at bruge "req.body..."
@@ -30,10 +19,10 @@ module.exports = function(req,res) {
         }
     )
         .then(result => {
-            //console.log(result + "Hej Stine, er d")
+
             res.end();
         })
-        .catch(error => console.error(error + "Stine er sej"))
+        .catch(error => console.error(error))
 }
 
 /*
