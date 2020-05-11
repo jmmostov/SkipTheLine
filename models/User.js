@@ -4,8 +4,9 @@ var uniqueValidator = require('mongoose-unique-validator')
 
 const bcrypt = require('bcrypt')
 
-
 //A schema represents what a collection looks like - specifying each attribute in the schema.
+// We create a schema, that specifies what an User should consist of.
+//Inside we also make validations, this way there want be any customers with the same username in the database.
 const UserSchema = new Schema({
     userType: {
         type: String

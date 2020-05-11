@@ -2,7 +2,6 @@ var User = require('../../models/User');
 //Det eneste exec skulle, var at udføre linje 4 - jeg havde blot assignet User.find({...}) til en variabel 'info'
 // og derfor skal man skrive exec foran
 //var info = User.find({userType: 'linestander'});
-const Product = require('../../models/Product.js');
 
 /*
 Alle userytype med typen 'linestander' bliver fundet og vist
@@ -40,4 +39,3 @@ module.exports = async (req,res)=>{
         else return res.redirect('/error');
     });
 };*/
-
