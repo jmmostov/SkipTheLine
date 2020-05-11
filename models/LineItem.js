@@ -50,13 +50,15 @@ module.exports = function lineItem(oldLineItems){
         }
     }
 
-    //
+    // This method all for the chosen product-line (items[id]).
     this.deleteAll = function (id) {
         this.totalQty -= this.items[id].qty;
         this.totalPrice -= this.items[id].price;
         delete this.items[id];
     }
 
+    // This method i used to loop through the properties "[id]" of the object "items". Afterwards vi push these into an array.
+    // This is done so that we can loop through these id's and access the product, qty and price.
     this.gennerateArray = function () {
         let arr = [];
         for (let id in this.items){
