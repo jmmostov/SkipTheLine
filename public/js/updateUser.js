@@ -1,7 +1,7 @@
 const formElem = document.getElementById('updateForm');
 
-//creates a function, that uses the method PUT, to update things in the database. Afterwords we uses JSON.stringify to send the elements to the client.
-//(Ved jeg ikke helt om vi gør....)
+// creates a function, that uses the method PUT, to update things in the database.
+// Afterwords we use JSON.stringify to send the elements as a body to the server (NodeJS).
 function updateUser(){
 
 

@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-//we create a schema, that specifies what an address should consist of.
+// We create a schema, that specifies what an address should consist of.
+// The
 const addressSchema = new Schema({
     streetName: {
         type: String,

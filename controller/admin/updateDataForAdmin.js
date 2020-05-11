@@ -1,5 +1,5 @@
 //update username via objectId that has been created by mongoDB
-var User = require('../../models/User');
+
 
 /*
 module.exports = function (req,res) {
@@ -10,6 +10,7 @@ module.exports = function (req,res) {
     });
 }
  */
+let User = require('../../models/User');
 
 module.exports = function(req,res) {
     console.log(req.body)
@@ -33,10 +34,10 @@ module.exports = function(req,res) {
         }
     )
         .then(result => {
-            //console.log(result + "Hej Stine, er d")
+
             res.end();
         })
-        .catch(error => console.error(error + "Stine er sej"))
+        .catch(error => console.error(error))
 }
 
 /*

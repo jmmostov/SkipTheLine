@@ -36,7 +36,7 @@ module.exports = function(req,res) {
             //console.log(result + "Hej Stine, er d")
             res.end();
         })
-        .catch(error => console.error(error + "Stine er sej"))
+        .catch(error => console.error(error))
 }
 
 /*

@@ -7,7 +7,7 @@ module.exports = async function (req,res) {
         if(err) {
             console.log(err);
         }
+        // We use 'res.end()' to return to the vanillaJS file.
         res.end();
-        // return res.redirect('/registerLinestander')
     });
 };

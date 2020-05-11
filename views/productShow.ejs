@@ -11,7 +11,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <!-- We create af for loop to loop through all our products in the database.
+            <!-- We create a for loop to loop through all our products in the database.
             Next, we find the name of the product and the price of the product. -->
             <% for(var i = 0; i < products.length; i++) { %>
                 <div class="post-preview">
@@ -23,7 +23,7 @@
                     </h3>
                 </div>
                 <div class="form-group">
-                    <!-- We create a button, "Add to cart", which is a link to /lineItem/:id -->
+                    <!-- We create a button, "Add to cart", which is a link to /lineItem/:id with the relevant id -->
                     <a href="/lineItem/<%= products[i]._id%>" class="btn btn-primary" role="button">Add to cart</a>
                 </div>
             <% } %>

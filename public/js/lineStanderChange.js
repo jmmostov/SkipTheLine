@@ -8,16 +8,9 @@ function updateLS(){
     for(let i = 0; i < formElem3.length; i++){
         formElem3[i].onclick = (event) => {
             event.preventDefault();
-            fetch('/update/LS', {
-                method: 'PUT',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    "_id": document.getElementsByClassName("orderName")[i].innerText
+            fetch('/update/LS/' + document.getElementsByClassName("orderName")[i].innerText, {
+                method: 'PUT'
                 })
-            })
                 .then(json => {
                     location.reload();
                 })

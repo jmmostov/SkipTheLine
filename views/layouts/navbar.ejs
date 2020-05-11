@@ -8,7 +8,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                 </li>
-                <% if(!LSCheck) { %>
+                <!-- We remove these buttons for LineStander and admin by using their global validation variables -->
+                <% if(!LSCheck && !admin) { %>
                 <li class="nav-item">
                     <a class="nav-link" href="/products">Products</a>
                 </li>
@@ -17,6 +18,8 @@
                 </li>
                 <% } %>
 
+
+                <!-- We add these buttons for admin by using it's global validation variable -->
                 <% if(admin) { %>
                 <li class="nav-item">
                     <a class="nav-link" href="/registerLinestander">Admin LS</a>
@@ -27,9 +30,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/adminProducts">Admin products</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Log out</a>
+                    </li>
                 <% } %>
 
-                <% if(!loggedIn && !LSCheck) { %>
+                <!-- We remove these buttons for everyone except users that has not logged in yet
+                by using their global validation variables -->
+                <% if(!loggedIn && !LSCheck && !admin) { %>
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Login</a>
                     </li>
@@ -38,15 +46,20 @@
                 </li>
                 <% } %>
 
+                <!-- These buttons are only for the customers -->
                 <% if(loggedIn) { %>
                     <li class="nav-item">
                         <a class="nav-link" href="/orderHistory/<%= loggedIn%>">Order history</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/accountSettings">Account Settings</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/logout">Log out</a>
                     </li>
                 <% } %>
 
+                <!-- These buttons are only for the Linestander -->
                 <% if(LSCheck) { %>
                     <li class="nav-item">
                         <a class="nav-link" href="/lineStander">LineStander</a>
@@ -55,13 +68,6 @@
                         <a class="nav-link" href="/logout">Log out</a>
                     </li>
                 <% } %>
-
-                <% if(loggedIn) { %>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/accountSettings">Account Settings</a>
-                    </li>
-                <% } %>
-
             </ul>
         </div>
     </div>

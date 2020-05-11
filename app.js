@@ -8,11 +8,11 @@ const ejs = require('ejs');
 const path = require('path')
 
 
-//let usersRouter = require('./routes/users');
-
+// Our to the database. Copy the url below into MongoDB Compass to access the database.
 mongoose.connect('mongodb+srv://Ramaran:LineStander123@skiptheline-asftb.mongodb.net/skiptheline', {useNewUrlParser: true, useUnifiedTopology: true});
 
-//for at benytte updateOne metoden, skal man åbenbart sætte false som default
+
+// To be able to use the 'updateOne'-method apparently you have to set the below 'false' as default...
 mongoose.set('useFindAndModify',false);
 
 
@@ -57,23 +57,13 @@ app.use("*",(req,res,next)=>{
     next();
 });
 
-/*
-// Lortet virker ikke... Det skulle ellers forestille at være måden at åbne porten via heroku...
-let port = process.env.PORT;
-if(port == null || port == ""){
-    port = 3000;
-}
-app.listen(port,()=>{
-    console.log('App listening...')
-});
 
-
- */
 
 app.listen(3000,()=>{
     console.log("App listening on port 3000")
 });
 
+// We define the ./routes/index-file as the "controller" for the routes. This is done to structure our code
+// instead of having everything in this file
 let indexRouter = require('./routes/index');
-
 app.use('/', indexRouter);
