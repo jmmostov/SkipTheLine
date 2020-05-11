@@ -1,3 +1,4 @@
+//This is the form with the id "updateForm" from the admin.ejs
 const formElem = document.getElementById('updateForm');
 
 // creates a function, that uses the method PUT, to update things in the database.
@@ -7,13 +8,13 @@ function updateUser(){
 
     formElem.onsubmit = (event) =>{
         event.preventDefault();
-
+        //We fetch the API call /update and use the PUT method. We also need to change the headers to JSON.
         fetch('/update', {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
-            },
+            },//In the body we stringify all the values from the input fields from admin.ejs.
             body: JSON.stringify({
                 "id":document.getElementById("id").value,
                 "username":document.getElementById("updateUsername").value,
@@ -28,39 +29,3 @@ function updateUser(){
     };
 }
 updateUser();
-
-
-
-/*formElem.addEventListener('submit', _=> {
-    const options = {
-        method: 'PUT',
-        body: new FormData(formElem)
-    }
-    return fetch('/update', options)
-        .then(res => res.json())
-        .then(res => console.log(res))
-})
-
-
- */
-
-/*function updateLineStander() {
-    console.log('hej')
-    const formUpdate = document.getElementById("updateForm")
-
-
-
-
-    console.log('test 2')
-    formUpdate.onsubmit = (event) => {
-        event.preventDefault();
-
-        fetch('/registerLinestander', {
-            method: 'PUT',
-            body: new FormData(formUpdate)
-        }).then(res => res.json())
-            .then(json => console.log(json))
-    }
-};
-
- */

@@ -5,13 +5,13 @@ const path = require('path');
 
 module.exports = (req,res,userType)=>{
     Address.create({
-        streetName: req.body.streetName,
-        streetNr: req.body.streetNr,
-        zipCode: req.body.zipCode,
-        city: req.body.city,
-        country: req.body.country,
-    },(error,Address)=>{
-        if(error) {
+            streetName: req.body.streetName,
+            streetNr: req.body.streetNr,
+            zipCode: req.body.zipCode,
+            city: req.body.city,
+            country: req.body.country,
+        },(error,Address)=>{
+            if(error) {
             console.log(error)
             return res.redirect('/register')
         }
