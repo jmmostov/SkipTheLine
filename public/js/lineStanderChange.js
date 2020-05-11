@@ -3,7 +3,7 @@ const formElem3 = document.getElementsByName('pickUpButton');
 
 
 //In the function we preventDefault when the button is clicked.
-//Then we fetch the API call /update/LS, and use the PUT method. The we stringify the id to send it to the client.
+//Then we fetch the API call /update/LS, and use the PUT method. Then we stringify the id to send it to the client.
 function updateLS(){
     for(let i = 0; i < formElem3.length; i++){
         formElem3[i].onclick = (event) => {
@@ -18,41 +18,3 @@ function updateLS(){
     }
 }
 updateLS();
-
-
-
-
-
-/*formElem.addEventListener('submit', _=> {
-    const options = {
-        method: 'PUT',
-        body: new FormData(formElem)
-    }
-    return fetch('/update', options)
-        .then(res => res.json())
-        .then(res => console.log(res))
-})
-
-
- */
-
-/*function updateLineStander() {
-    console.log('hej')
-    const formUpdate = document.getElementById("updateForm")
-
-
-
-
-    console.log('test 2')
-    formUpdate.onsubmit = (event) => {
-        event.preventDefault();
-
-        fetch('/registerLinestander', {
-            method: 'PUT',
-            body: new FormData(formUpdate)
-        }).then(res => res.json())
-            .then(json => console.log(json))
-    }
-};
-
- */
