@@ -24,7 +24,9 @@ module.exports = function(req,res) {
             new: true
         }
     )
+
         .then(result => {
+            // We return to the public/js/changeBillingAddress.js file.
             res.end();
         })
         .catch(error => console.error(error))

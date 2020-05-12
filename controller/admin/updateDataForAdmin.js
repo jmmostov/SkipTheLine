@@ -23,9 +23,9 @@ module.exports = function(req,res) {
             new: true
         }
     )
-    //then it responses with end and the .then in updateUser.js can run.
-        .then(result => {
 
+        .then(result => {
+            // Then it responses with end() and the .then in updateUser.js can run.
             res.end();
         })
         .catch(error => console.error(error))

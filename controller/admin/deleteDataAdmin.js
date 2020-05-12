@@ -7,6 +7,7 @@ module.exports = async function (req,res) {
         if(err) {
             console.log(err);
         }
+        // We use 'res.end()' to return to the public/js/deleteUser.js file.
         res.end();
     });
 };
