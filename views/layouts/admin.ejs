@@ -1,3 +1,4 @@
+<!-- The update form, used in Admin LS, Admin User and account settings -->
 <section class="update">
     <h3>UPDATE data</h3>
     <form id="updateForm" name="updateForm" >
@@ -30,6 +31,8 @@
     </form>
 </section>
 
+<!-- We use this ejs file a few times in the system, one of them is in account settings for the user.
+ The user should not be able to delete its own user, and therefore the below form is only shown whenever the admin is logged in.-->
 <% if(admin) { %>
 <section class="delete">
     <h3>DELETE</h3>

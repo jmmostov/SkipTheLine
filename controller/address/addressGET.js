@@ -4,9 +4,8 @@ const User = require('../../models/User');
 
 module.exports = async (req,res)=> {
 
-    // We find all addresses and the logged in customer so we can use them in the ejs:
+    // We find the logged in user from session so we can use them in the ejs:
     let user = await User.find({_id: req.session.userId});
-    //let address = await Address.find({});
 
 
     if (loggedIn) {

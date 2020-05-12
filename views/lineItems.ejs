@@ -11,9 +11,11 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
+            <!-- Products is actually the lineItem.gennerateArray. -->
             <% for(var i = 0; i < products.length; i++) { %>
                 <div class="post-preview">
                     <h1 class="post-title">
+
                         <%= products[i].product.productName + " " + products[i].product.price%>,-
                     </h1>
                     <h4 class="post-subtitle">

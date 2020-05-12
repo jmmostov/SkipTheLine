@@ -10,7 +10,7 @@
 <h1>
     Admin can delete and update products
 </h1>
-
+<!--We loop through the products and show all the products' name, price and id.-->
 <section class="get">
     <h3> GET data for Products</h3>
     <div>
@@ -28,22 +28,7 @@
     </div>
 </section>
 
-<section class="update">
-    <h3>UPDATE DATA FOR PRODUCTS</h3>
-    <form id="updateForm" name="updateForm" >
-        <div class="input">
-            <label for="id"> ID </label>
-            <input type="text" id="id" name="id" placeholder="ID">
-        </div>
-        <div class="input">
-            <label for="username"> Username </label>
-            <input type="text" id="updateUsername" placeholder="Username">
-        </div>
-        <br>
-        <button type="submit" id="formButton" name="formButton" >Update</button>
-    </form>
-</section>
-
+<!--The new product box-->
 <section class="new_product">
     <h3>ADD A NEW PRODUCT</h3>
     <form action="/product/new" method ="POST" enctype="application/x-www-form-urlencoded">
@@ -72,7 +57,7 @@
 </section>
 <br>
 <br>
-
+<!--The delete product box-->
 <section class="delete">
     <h3>DELETE</h3>
     <form id="deleteProducts">
@@ -88,7 +73,6 @@
     </form>
 </section>
 
-<script src="js/updateUser.js"></script>
 <script src="js/deleteUser.js"></script>
 <script src="js/deleteProduct.js"></script>
 

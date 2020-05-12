@@ -21,6 +21,7 @@
     <div>
         <% for(var i = 0; i < customer.length; i++) { %>
             <article class="data">
+                <!-- If the customer id is the same as the customer id saved in session (from the global variable loggedIn) -->
                 <% if(customer[i]._id == loggedIn) { %>
                 <hr>
                 <div> <b>Username:</b> <%= customer[i].username %> </div>
