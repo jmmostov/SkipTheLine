@@ -18,9 +18,9 @@ module.exports = function(req,res) {
             new: true
         }
     )
-    //When .then has run here, the .then in lineStanderDelivered.js can run.
-        .then(result => {
 
+        .then(result => {
+            // We return to the public/js/lineStanderDelivered.js file.
             res.end();
         })
         .catch(error => console.error(error))

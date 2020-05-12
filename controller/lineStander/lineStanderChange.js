@@ -21,8 +21,8 @@ module.exports = function(req,res) {
             new: true
         }
     )
-    //then it responses with end and the .then in lineStanderChange.js can run.
         .then(result => {
+            // We return to the public/js/lineStanderChange.js file.
             res.end();
         })
         .catch(error => console.error(error))
