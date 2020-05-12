@@ -9,6 +9,7 @@
     Register as a new user here
 </h1>
 <hr>
+<!-- If the errors array holds something and the is bigger than 0 then we loop through the errors array and list them on the page. -->
 <% if(errors != null && errors.length > 0) { %>
     <% for(var i = 0; i <errors.length; i++) { %>
            <li class="errorMessages"> <%= errors[i] %> </li>

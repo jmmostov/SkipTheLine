@@ -7,18 +7,7 @@ const orderSchema = new Schema({
         type: mongoose.Schema.Types.ObjectID,
         ref: 'User'
     },
-    /*
-    // The status of the order. It's true by default because it's ongoing.
-    pickedUp: {
-        type: Boolean,
-        default: false
-    },
-    delivered: {
-        type: Boolean,
-        default: false
-    },
 
-     */
     status: {
         type:[{
             type: String,

@@ -1,6 +1,9 @@
+// This is the button with the id "deliveredButtin" from the lineStander.ejs
 const formElem4 = document.getElementsByName('deliveredButton');
 
-
+// Creates a function, that uses the method PUT, to update things in the database.
+// We fetch the API /update/LSdelivery and sends headers as JSON.
+// Afterwords we use JSON.stringify to send the elements as a body to the server (NodeJS).
 function delivered(){
     for(let i = 0; i < formElem4.length; i++) {
         formElem4[i].onclick = (event) => {
@@ -23,41 +26,3 @@ function delivered(){
     }
 }
 delivered();
-
-
-
-
-
-/*formElem.addEventListener('submit', _=> {
-    const options = {
-        method: 'PUT',
-        body: new FormData(formElem)
-    }
-    return fetch('/update', options)
-        .then(res => res.json())
-        .then(res => console.log(res))
-})
-
-
- */
-
-/*function updateLineStander() {
-    console.log('hej')
-    const formUpdate = document.getElementById("updateForm")
-
-
-
-
-    console.log('test 2')
-    formUpdate.onsubmit = (event) => {
-        event.preventDefault();
-
-        fetch('/registerLinestander', {
-            method: 'PUT',
-            body: new FormData(formUpdate)
-        }).then(res => res.json())
-            .then(json => console.log(json))
-    }
-};
-
- */

@@ -2,7 +2,7 @@ const User = require('../../models/User.js');
 const Address = require('../../models/Address')
 const path = require('path');
 
-
+//We create a function with two callbacks inside. First we create the address, and if there are no errors then it will create the user.
 module.exports = (req,res,userType)=>{
     Address.create({
             streetName: req.body.streetName,
@@ -29,10 +29,9 @@ module.exports = (req,res,userType)=>{
                 (error,User)=>{
                     if(error) {
                         console.log('der kommer en fejlmeddelse ' + error)
+                        //Uses the object.keys to return the error entity names as an array.
                         const validationErrors = Object.keys(error.errors).map(key => error.errors[key].message)
                         req.session.validationErrors = validationErrors
-                        //req.flash('validationErrors',validationErrors)
-                        //console.log(error)
 
                         return res.redirect('/register')
                     }
