@@ -1,4 +1,4 @@
-
+// Most of this is taken from controller/order/orderGET.js
 const User = require('../../models/User');
 
 

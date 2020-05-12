@@ -18,6 +18,7 @@ module.exports = function(req,res) {
                 phoneNumber: req.body.phoneNumber,
             }
         },
+        // We want the document to be returned in it's new, updated form. Therefore we set it to true.
         {
             new: true
         }

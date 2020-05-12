@@ -1,7 +1,6 @@
 const Address = require('../../models/Address');
 const User = require('../../models/User');
 
-
 module.exports = async (req,res)=> {
     // We try to find all products created in the database
     //const products = Product.find({});
@@ -10,9 +9,6 @@ module.exports = async (req,res)=> {
     // We find all addresses and the logged in customer so we can use them in the ejs:
     let user = await User.find({_id: req.session.userId});
     let address = await Address.find({});
-
-
-
 
 
     // We make an if/else, where we use the global variable "loggedIn" to check if the user is logged in as a customer

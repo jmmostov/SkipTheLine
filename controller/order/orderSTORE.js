@@ -1,6 +1,7 @@
 const Order = require('../../models/Order');
 
-//creates an order using the Order.create method, which includes the attributes: orderedBy, deliveryLocation, lineItem and billingAddress.
+// Creates an order using the Order.create() method, which includes the attributes: orderedBy, deliveryLocation and lineItem.
+// We make a callback function afterwards.
 module.exports = (req,res)=>{
     Order.create({
         orderedBy: req.session.userId,
@@ -12,10 +13,9 @@ module.exports = (req,res)=>{
             return res.redirect('/lineItems')
         }
         else {
+            // The lineItems in session is made an empty object and then we het redirected to the orderHistory for the logged in user
             req.session.lineItems =  {};
             return res.redirect('/orderHistory/' + req.session.userId);
-
         }
-
     })
 };

@@ -14,6 +14,7 @@ module.exports = function(req,res) {
                 status: ["completed"]
             }
         },
+        // We want the document to be returned in it's new, updated form. Therefore we set it to true.
         {
             new: true
         }
