@@ -1,6 +1,7 @@
 // This is the controller for public/js/lineStanderDelivered.js.
 const Order = require('../../models/Order');
-//Creates a function that finds an Order and update it by the id. //We then set the status to completed and response with .end().
+//Creates a function that finds an Order and update it by the id.
+// We then set the status to completed and response with .end().
 module.exports = function(req,res) {
 
     Order.findOneAndUpdate(
