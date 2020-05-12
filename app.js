@@ -33,7 +33,7 @@ app.use(session({
     cookie: {maxAge: 180 * 60 * 1000}
 }))
 
-// Now, we are making a global variable which can be called everywhere on the server.
+// Now, we are creating a global variable which can be called everywhere on the server.
 // What this variable does is checking if the the user is logged in as a customer. This is possible since we
 // make the "_id" of the customer "userId" in the session when you log in as a customer. So we use this "loggedIn" as
 // a parameter to check for whenever we want to see if it's a customer that's logged in.
