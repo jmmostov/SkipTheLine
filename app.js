@@ -8,7 +8,7 @@ const ejs = require('ejs');
 const path = require('path')
 
 
-// Our to the database. Copy the url below into MongoDB Compass to access the database.
+// Our connection to the database. Copy the url below into MongoDB Compass to access the database.
 mongoose.connect('mongodb+srv://Ramaran:LineStander123@skiptheline-asftb.mongodb.net/skiptheline', {useNewUrlParser: true, useUnifiedTopology: true});
 
 
